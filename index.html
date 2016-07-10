@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Code Challenge</title>
+      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body class="container-fluid">
+      <div class="logo">
+      </div>
+      <div id = "signed-out">
+
+<!-- Sign In Button -->
+        <div class="container">
+        	<div class="row">
+                <p class="text-center">
+                  <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+                  data-target="#signin-modal">
+                   <span style="font-weight: 300; font-size: 28px">Sign In</span>
+                  </a>
+<!-- Sign Up Button -->
+                   <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+                   data-target="#signup-modal">
+                      <span style="font-weight: 300; font-size: 28px">Sign Up</span>
+                  </a>
+                </p>
+           </div>
+      </div>
+
+<!-- Sign In Modal -->
+      <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 style="text-align: center">Sign In to Your Account</h3>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in" style="text-align:center;">
+                <fieldset>
+                  <input type="email" name="credentials[email]" id="signin-email" placeholder="Your Email"><br /><br />
+                  <input type="password" name="credentials[password]" id="signin-password" placeholder="Your Password"><br /><br />
+                  <input type="submit" name="submit" class="btn btn-lg btn-default" value="Sign In">
+                </fieldset>
+                <div id= "sign-in-notes">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Sign Up Modal -->
+      <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 style="text-align: center">Create an Account</h3>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up" style="text-align:center;">
+                <fieldset>
+
+                  <input type="text" name="credentials[name]"
+                  id="signup-name" placeholder="Your Name"><br /><br />
+
+                  <input type="email" name="credentials[email]"
+                  id="signup-email" placeholder="Your Email"><br /><br />
+
+                  <input type="password" name="credentials[password]"
+                  id="signup-password" placeholder="Set Password"><br /><br />
+
+                  <input type="password" name="credentials[password_confirmation]"
+                  id="signup-password-confirmation" placeholder="Confirm Password"><br /><br />
+
+                  <input type="submit" name="submit" class="btn btn-lg btn-default" value="Create Account">
+
+                </fieldset>
+                <div id= "sign-up-notes">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+
+<div id = "signed-in">
+
+<!-- Main Content-->
+<div style="clear: both;"></div>
+<center>
+  <div class="jumbotron">
+    <div id="welcome" style="text-align:center">
+    </div>
+  </div>
+</center>
+<div class="content">
+</div>
+
+<!-- Sign Out Button -->
+  <div id="account">
+        <div class="container">
+
+            <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+            data-target="#signout-modal">
+             <span style="font-size: 16px; font-weight: 300">Sign Out</span>
+           </a>
+
+<!-- Change Password Button -->
+
+           <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
+           data-target="#password-modal">
+              <span style="font-size: 16px; font-weight: 300">Account</span>
+          </a>
+
+      </div>
+    </div>
+<!-- Sign Out Modal -->
+    <div class="modal fade" id="signout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" style="text-align: center">Are You Sure You Want to Sign Out?</h3>
+            </div>
+            <div class="modal-body">
+                <form id="sign-out">
+                  <fieldset style="text-align: center">
+                    <input type="submit" class="btn btn-md btn-default" name="submit" value="Sign Out">
+                  </fieldset>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Change Password Modal -->
+
+      <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" style="text-align: center">Change Your Password</h3>
+            </div>
+            <div class="modal-body">
+              <form id="change-password" style="text-align:center;">
+                <fieldset>
+
+                  <input type="password" name="passwords[old]"
+                  placeholder="Old Password"><br /><br />
+
+                  <input type="password" name="passwords[new]"
+                  placeholder="New Password"><br /><br />
+
+                  <input type="submit" name="submit" class="btn btn-md btn-default" value="Change Password">
+
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </body>
+  </html>

@@ -1,0 +1,86 @@
+$main-background-color: $dark-green;
+$secondary-background: $light-green;
+$font-color: $purpleish;
+
+body {
+  background-color: $main-background-color;
+  color: $font-color;
+}
+
+.logo {
+  margin: 20px auto;
+  text-align: center;
+}
+
+// .well {
+//   text-align: center;
+// }
+
+
+// #event-listing {
+//   background-color: #ffffff;
+//   border-radius: 20px;
+//   margin: 25px auto;
+//   padding: 15px 10%;
+//   text-align: center;
+//   height: 750px;
+//   width: 85%;
+// }
+
+.content {
+  clear: both;
+  margin: 0 auto;
+  max-width: 75%;
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: #FFF;
+  margin-top: 40px;
+  max-width: 75%;
+}
+
+label {
+  font-weight: 300;
+  color: #000;
+  font-size: 18px;
+}
+
+#account {
+  left: 10px;
+  position: absolute;
+  top: 30px;
+}
+
+h2 {
+  color: $secondary-background;
+}
+
+.clicked {
+  color: $dark-green;
+  font-weight: 900;
+}
+
+.btn-default:hover {
+  color: #468499;
+}
+
+.nav {
+  @include make-row();
+  margin-left: 75%;
+
+  .nav-button {
+    @include make-lg-column(3);
+    @include make-md-column(3);
+    @include make-sm-column(3);
+    @include make-xs-column(3);
+  }
+}
+
+@media (max-width: 800px) {
+  .logo img {
+    margin: 40px auto 0;
+    max-width: 100px;
+    text-align: center;
+  }
+}
