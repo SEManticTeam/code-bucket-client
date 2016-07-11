@@ -34,7 +34,7 @@ const signInSuccess = (data) => {
   $('#signed-out').hide();
   $('.signed-in').show();
   $('.jumbotron').show();
-  $('#welcome').html('<h1>Hello, ' + app.user.name +'</h1>');
+  $('#welcome').html('<h1>Hello, ' + app.user.givenName +'</h1>');
 };
 
 const signOutSuccess = (data) => {
