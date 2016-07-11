@@ -24,7 +24,7 @@ const signUpSuccess = function(data){
   $('#signin-modal').modal('hide');
   $('#signup-modal').modal('hide');
   $('#signed-out').hide();
-  $('#signed-in').show();
+  $('.signed-in').show();
 };
 
 const signInSuccess = (data) => {
@@ -32,7 +32,7 @@ const signInSuccess = (data) => {
   $('#signin-modal').modal('hide');
   $('#signup-modal').modal('hide');
   $('#signed-out').hide();
-  $('#signed-in').show();
+  $('.signed-in').show();
   $('.jumbotron').show();
   $('#welcome').html('<h1>Hello, ' + app.user.name +'</h1>');
 };
@@ -42,6 +42,8 @@ const signOutSuccess = (data) => {
   $('#signout-modal').modal('hide');
   $('#password-modal').modal('hide');
   $('#signed-in').hide();
+  $('.signed-in').hide();
+  $('.jumbotron').hide();
   $('#signed-out').show();
   $('.content').empty();
   $('#signup-email').val('');
@@ -68,5 +70,5 @@ module.exports = {
   signInFailure,
   signUpFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
 };

@@ -1,36 +1,67 @@
-$main-background-color: $dark-green;
+$main-background-color: $white;
 $secondary-background: $light-green;
-$font-color: $purpleish;
+$font-color: $blue;
 
 body {
-  background-color: $main-background-color;
+  background-color: $white;
   color: $font-color;
 }
 
+#content {
+  margin: 5%;
+}
+
 .logo {
+  margin-top: -15px;
+}
+
+.dropdown {
   margin: 20px auto;
   text-align: center;
 }
 
-// .well {
-//   text-align: center;
-// }
+.well {
+  text-align: center;
+}
 
+.options {
+  max-width: 95%;
+  text-align: center;
+  margin: 50px auto;
+}
 
-// #event-listing {
-//   background-color: #ffffff;
-//   border-radius: 20px;
-//   margin: 25px auto;
-//   padding: 15px 10%;
-//   text-align: center;
-//   height: 750px;
-//   width: 85%;
-// }
+#event-listing {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 25px auto;
+  padding: 15px 10%;
+  text-align: center;
+  height: 750px;
+  width: 85%;
+}
+
+.tools {
+  clear: both;
+}
+
+.functions {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  width: 20%;
+}
+
+canvas {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 20px auto;
+  text-align: center;
+}
 
 .content {
   clear: both;
-  margin: 0 auto;
-  max-width: 75%;
+  margin: 20px auto;
+  max-width: 85%;
   text-align: center;
 }
 
@@ -47,7 +78,7 @@ label {
 }
 
 #account {
-  left: 10px;
+  right: 10px;
   position: absolute;
   top: 30px;
 }
@@ -62,7 +93,11 @@ h2 {
 }
 
 .btn-default:hover {
-  color: #468499;
+  color: #blue;
+}
+
+.navbar-btn:hover {
+  color: $blue;
 }
 
 .nav {
