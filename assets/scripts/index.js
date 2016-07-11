@@ -1,6 +1,7 @@
 'use strict';
 
 const authEvents = require('./auth/events.js');
+const challengeEvents = require('./challenges/events.js');
 
 
 
@@ -9,4 +10,5 @@ const authEvents = require('./auth/events.js');
 $(() => {
   authEvents.addHandlers();
   authEvents.signInOrOut();
+  challengeEvents.addHandlers();
 });

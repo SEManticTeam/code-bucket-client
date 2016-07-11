@@ -273,59 +273,7 @@
 </div>
 </div>
 <!-- Handlebars for Single Challenge -->
-<div class="signed-in">
-<div class="content">
-  <div class="single-challenge">
-    <br />
-    <h1>ATM Pin Challenge</h1>
-    <h5 style="color:#777">Language: Javascript</h5>
-    <h5 style="color:#000">Description: ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits. If the function is passed a valid PIN string, return true, else return false.</h5>
-    <hr>
-    <br />
-    <div class="col-sm-6">
-      <h1 style="font-weight:300">Submissions:</h1>
-      <table class="table table-hover" id="item-table">
-        <tr>
-          <td><h4 style="color:#000; text-decoration: underline">Pass/Fail</h4></td>
-          <td><h4 style="color:#000; text-decoration: underline">Submitted By</h4></td>
-          <td><h4 style="color:#000; text-decoration: underline">Date Submitted</h4></td>
-          <td><h4 style="color:#000; text-decoration: underline">Lines of Code</h4></td>
-        </tr>
-        <tbody>
-      <tr>
-          <td id="grade" style="padding-top: 3%">
-            <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
-          </td>
-          <td><h4>Misha Herscu</h4></td>
-          <td><h4>08/04/2016</h4></td>
-          <td><h4 style="color:#000">12</h4></td>
-      </tr>
-      <tr>
-          <td id="grade" style="padding-top: 3%">
-            <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
-          </td>
-          <td><h4>Sarah Hartwick</h4></td>
-          <td><h4>08/04/2016</h4></td>
-          <td><h4 style="color:#000">15</h4></td>
-      </tr>
-      <tr>
-          <td id="grade" style="padding-top: 3%">
-            <span style="color:red" class="glyphicon glyphicon-thumbs-down"></span>
-          </td>
-          <td><h4>Esther Cordova</h4></td>
-          <td><h4>08/04/2016</h4></td>
-          <td><h4 style="color:#000">12</h4></td>
-      </tr>
-    </tbody>
-      </table>
-    </div>
-    <div class="col-sm-6">
-      <h1 style="color:#777; font-weight:300">Submit A Solution</h1>
-      <input id="input-ficons-1" name="inputficons1[]" multiple type="file" class="file-loading">
-    </div>
-  </div>
-</div>
-</div>
+
   <!-- Create Challenge Modal -->
         <div class="modal fade" id="create-challenge-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -337,12 +285,12 @@
               <div class="modal-body">
                 <form id="create-challenge-form" style="text-align:center;">
                   <fieldset class="form-group">
-                  <label for="event-name"><span style="color:#31708f" class="glyphicon glyphicon-folder-open"></span>&nbsp; Name Your Challenge</label>
-                  <input type="text" class="form-control" name="name" id="challenge-name" placeholder="Challenge Name">
+                  <label for="challenge-name"><span style="color:#31708f" class="glyphicon glyphicon-folder-open"></span>&nbsp; Name Your Challenge</label>
+                  <input type="text" class="form-control" name="challenge[name]" id="challenge-name" placeholder="Challenge Name">
                 </fieldset>
                 <fieldset class="form-group">
                   <label for="challenge[language]">What Programming Language?</label>
-                  <select class="form-control">
+                  <select class="form-control" name="challenge[language]">
                     <option>Ruby</option>
                     <option>Javascript</option>
                     <option>Python</option>
@@ -350,8 +298,8 @@
                   </select>
                 </fieldset>
                 <fieldset class="form-group">
-                    <label for="challenge[name]">What is the Challenge?</label>
-                    <textarea class="form-control" rows="6"></textarea>
+                    <label for="challenge[description]">What is the Challenge?</label>
+                    <textarea class="form-control" name="challenge[description]" rows="6"></textarea>
                 </fieldset>
                 <fieldset class="form-group">
                     <input type="submit" name="submit" class="btn btn-md btn-default" value="Create Challenge">
