@@ -7,7 +7,6 @@ const drop = require('jquery-ui/ui/effects/effect-drop');
 
 const getFormFields = require('../../../lib/get-form-fields');
 const app = require('../app.js');
-const fileInput = require('../fileinput.js');
 const api = require('./api');
 const ui = require('./ui');
 
@@ -81,13 +80,6 @@ const addHandlers = () => {
   $(".my-submissions").hide();
   $('#view-challenges').on('click', viewChallenges);
   $('#view-my-submissions').on('click', viewMySubmissions);
-  $("#input-ficons-1").fileinput({
-    uploadUrl: "/file-upload-batch/2",
-    uploadAsync: true,
-    showCaption: true,
-    previewFileIcon: '<i class="fa fa-file"></i>',
-    allowedPreviewTypes: ['image', 'html', 'text', 'video', 'audio', 'flash', 'object'],
-});
 };
 
 const signInOrOut = () => {
