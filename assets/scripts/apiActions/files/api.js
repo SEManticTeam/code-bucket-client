@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../../app.js');
+const uploadScript = require('./uploadScript.js');
 
 // const show = () => {
 //   return $.ajax({
@@ -17,6 +18,11 @@ const app = require('../../app.js');
 // };
 
 const create = function(data){
+
+  // upload to AWS bucket
+  uploadScript.uploadFile(data);
+
+  // get the echo server response as a check
   return $.ajax({
     url: 'http://httpbin.org/post',
     method: 'POST',

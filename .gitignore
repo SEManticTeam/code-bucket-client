@@ -140,3 +140,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Data not to be shared <-- copied from express-multer-api repo
+.env
+credentials.csv

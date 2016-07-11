@@ -4,7 +4,23 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "jquery": "^2.2.2"
+    "dotenv": "^2.0.0",
+    "jquery": "^2.2.2",
+    "jquery-ui": "github:jquery/jquery-ui",
+
+    "aws-sdk": "^2.4.6",
+    "bcrypt": "^0.8.5",
+    "body-parser": "~1.13.2",
+    "cors": "^2.7.1",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "file-type": "^3.8.0",
+    "mongoose": "^4.4.6",
+    "mongoose-unique-validator": "^1.0.2",
+    "morgan": "~1.6.1",
+    "multer": "^1.1.0",
+    "serve-favicon": "~2.3.0"
+
   },
   "devDependencies": {
     "babel-core": "^6.7.4",
