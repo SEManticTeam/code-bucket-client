@@ -1,9 +1,9 @@
 'use strict';
 
-const app = require('../app.js');
-const api = require('./api.js');
+const app = require('../../app.js');
 
 const failure = (error) => {
+  console.log(error);
 };
 
 const signInFailure = () => {
@@ -37,7 +37,7 @@ const signInSuccess = (data) => {
   $('#welcome').html('<h1>Hello, ' + app.user.name +'</h1>');
 };
 
-const signOutSuccess = (data) => {
+const signOutSuccess = () => {
   app.user = null;
   $('#signout-modal').modal('hide');
   $('#password-modal').modal('hide');
@@ -51,7 +51,7 @@ const signOutSuccess = (data) => {
   $('#signin-password').val('');
 };
 
-const changePasswordSuccess = (data) => {
+const changePasswordSuccess = () => {
   $('#password-modal').modal('hide');
 };
 

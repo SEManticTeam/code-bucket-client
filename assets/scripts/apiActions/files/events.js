@@ -1,3 +1,9 @@
+'use strict';
+
+const getFormFields = require('../../../../lib/get-form-fields');
+const api = require('./api.js');
+const ui = require('./ui.js');
+
 // const draggable = require('jquery-ui/ui/widgets/draggable');
 // const resizable = require('jquery-ui/ui/widgets/resizable');
 // const sketch = require('../../sketch.js');
@@ -20,3 +26,22 @@
 
 // $('#add-function').on('click', addFunction);
 // $('#add-arrow').on('click', addArrow);
+
+
+const onFileSubmit = (event) => {
+  event.preventDefault();
+
+  let data = getFormFields(event.target);
+
+  api.create(data)
+  .done(ui.uploadFileSuccess)
+  .fail(ui.failure);
+};
+
+const addHandlers = () => {
+  $('#multipart-form-data').on('submit', onFileSubmit);
+};
+
+module.exports = {
+  addHandlers,
+};
