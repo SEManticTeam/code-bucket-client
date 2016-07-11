@@ -29,6 +29,19 @@
            </div>
       </div>
 
+      <form id="multipart-form-data" enctype="multipart/form-data">
+        <fieldset>
+          <legend>enctype="multipart/form-data"</legend>
+          <label>Comment
+            <input type="text" name="image[comment]">
+          </label>
+            <label>
+              <input type="file" name="image[file]">
+            </label>
+            <input type="submit" name="submit" value="Upload">
+        </fieldset>
+      </form>
+
 <!-- Sign In Modal -->
       <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -94,12 +107,12 @@
 
 <!-- Main Content-->
 <div style="clear: both;"></div>
-<center>
+<!-- <center> -->
   <div class="jumbotron">
     <div id="welcome" style="text-align:center">
     </div>
   </div>
-</center>
+<!-- </center> -->
 <div class="content">
 </div>
 
