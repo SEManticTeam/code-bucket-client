@@ -2,7 +2,6 @@
 
 const app = require('../../app.js');
 const fileinput = require('../../fileinput.js');
-
 const singleChallenge = require('../../templates/singleChallenge.handlebars');
 
 const multipleChallengesTemplate = require('../../templates/multipleChallenges.handlebars');
@@ -15,6 +14,7 @@ const success = (data) => {
   console.log(data);
 };
 
+
 const challengeCreated = (data) => {
   $('.all-challenges').hide();
   $('.my-submissions').hide();
@@ -22,21 +22,7 @@ const challengeCreated = (data) => {
   $('#create-challenge-modal').modal('hide');
   data.challenge.createdAt = data.challenge.createdAt.split('T')[0];
   $('#contents').html(singleChallenge(data));
-  $("#button").fileinput({
-    uploadUrl: app.host + "/submissions",
-    uploadAsync: true,
-    ajaxSettings: { headers: {
-        Authorization: 'Token token=' + app.user.token,
-      },
-  },
-    previewFileIcon: '<i class="fa fa-file"></i>',
-    allowedPreviewTypes: ['image', 'html', 'text', 'video', 'audio', 'flash', 'object'],
-});
-$('#button').on('fileuploaded', function(event, data, previewId, index) {
-    let form = data.form;
-    let files = data.files;
-    console.log(files);
-});
+  $("#fileinput").fileinput();
 };
 
 const viewUserChallengesSuccess = (data) => {
@@ -46,9 +32,8 @@ const viewUserChallengesSuccess = (data) => {
 };
 
 const viewAllChallengesSuccess = (data) => {
-  console.log(data);
   $('.jumbotron').hide();
-  $('#create-challenge-modal').modal('hide');
+  $('#contents').empty();
   $('#contents').html(multipleChallengesTemplate(data));
 };
 

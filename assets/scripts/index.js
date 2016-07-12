@@ -17,4 +17,5 @@ $(() => {
   authEvents.addHandlers();
   authEvents.signInOrOut();
   challengeEvents.addHandlers();
+  submissionEvents.addHandlers();
 });

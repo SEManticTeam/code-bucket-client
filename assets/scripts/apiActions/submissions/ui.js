@@ -17,37 +17,16 @@ const failure = (error) => {
 };
 
 const viewUserSubmissionsSuccess = (data) => {
-  $('.my-challenges').hide();
   $('.jumbotron').hide();
-  $('.item-table').hide();
-  $('#create-challenge-modal').modal('hide');
-
-  $('#my-or-all-submissions-info').html('');
-  $('#my-or-all-submissions-info').html(multipleSubmissionsTemplate(data));
-  $('#my-or-all-submissions-info').show();
-  $('#my-or-all-submissions-table').show();
-  $('#view-my-submissions').show();
-  $('#view-all-submissions').show();
-
-  $('#view-my-submissions').prop('disabled', true);
-  $('#view-all-submissions').prop('disabled', false);
+  $('#contents').empty();
+  $('#contents').html(multipleSubmissionsTemplate(data));
 };
 
 const viewAllSubmissionsSuccess = (data) => {
-  $('.my-challenges').hide();
+  console.log(data);
   $('.jumbotron').hide();
-  $('.item-table').hide();
-  $('#create-challenge-modal').modal('hide');
-
-  $('#my-or-all-submissions-info').html('');
-  $('#my-or-all-submissions-info').html(multipleSubmissionsTemplate(data));
-  $('#my-or-all-submissions-info').show();
-  $('#my-or-all-submissions-table').show();
-  $('#view-my-submissions').show();
-  $('#view-all-submissions').show();
-
-  $('#view-my-submissions').prop('disabled', false);
-  $('#view-all-submissions').prop('disabled', true);
+  $('#contents').empty();
+  $('#contents').html(multipleSubmissionsTemplate(data));
 };
 
 module.exports = {

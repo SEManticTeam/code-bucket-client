@@ -24,8 +24,6 @@ const viewChallenges = (event) => {
   event.preventDefault();
   $('.jumbotron').hide();
   $('#contents').empty();
-  $('#my-challenge-info').hide();
-  $('#my-challenge-table').hide();
   event.preventDefault();
   api.viewAllChallenges()
   .done(ui.viewAllChallengesSuccess)
@@ -63,6 +61,19 @@ const onDeleteChallenge = (event) => {
   .fail(ui.failure);
 };
 
+const createSubmission = (event) => {
+  event.preventDefault();
+$.ajax({
+  method: 'POST',
+  url: 'http://localhost:3000/submissions',
+  data: new FormData(event.target),
+  contentType: false,
+  processData: false,
+})
+.done((data) => { console.log(data);})
+.fail((error) => { console.error(error);});
+};
+
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
@@ -70,6 +81,7 @@ const addHandlers = () => {
   $(document).on('click','#view-all-challenges', viewChallenges);
   $(document).on('click', '.select-challenge', onSelectChallenge);
   $(document).on('click', '.delete-challenge', onDeleteChallenge);
+  $(document).on('submit', '#upload-form', createSubmission);
 };
 
 module.exports = {
@@ -79,4 +91,5 @@ module.exports = {
   addHandlers,
   onSelectChallenge,
   onDeleteChallenge,
+  createSubmission,
 };
