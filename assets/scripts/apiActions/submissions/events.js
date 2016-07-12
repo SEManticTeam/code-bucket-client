@@ -4,7 +4,21 @@ const getFormFields = require('../../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
-const viewMySubmissions = (event) => {
+const onViewUserSubmissions = (event) => {
+  event.preventDefault();
+  api.viewUserSubmissions()
+  .done(ui.viewUserSubmissionsSuccess)
+  .fail(ui.failure);
+};
+
+const onViewAllSubmissions = (event) => {
+  event.preventDefault();
+  api.viewAllSubmissions()
+  .done(ui.viewAllSubmissionsSuccess)
+  .fail(ui.failure);
+};
+
+const onViewSubmissions = (event) => {
   event.preventDefault();
   $('.jumbotron').hide();
   $('.single-challenge').hide();
@@ -12,13 +26,19 @@ const viewMySubmissions = (event) => {
   $('#my-challenge-info').hide();
   $('#my-challenge-table').hide();
   $('.my-submissions').show();
+  $('#view-all-submissions').click();
 };
 
 const addHandlers = () => {
-  $('#view-my-submissions').on('click', viewMySubmissions);
+  $('#view-submissions').on('click', onViewSubmissions);
+  $('#view-my-submissions').on('click', onViewUserSubmissions);
+  $('#view-all-submissions').on('click', onViewAllSubmissions);
+
 };
 
 module.exports = {
-  viewMySubmissions,
+  onViewSubmissions,
+  onViewUserSubmissions,
+  onViewAllSubmissions,
   addHandlers,
 };

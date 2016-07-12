@@ -107,7 +107,7 @@
     </div>
 
       <div class="signed-in">
-      <a href="#" id="view-my-submissions" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">My Submissions</a>
+      <a href="#" id="view-submissions" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">My Submissions</a>
       <a href="#" id="view-challenges" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">View Challenges</a>
       <a href="#" class="btn btn-default navbar-btn navbar-right" role="button" data-toggle="modal"
       data-target="#create-challenge-modal" style="margin-right: 5px">Create Challenge</a>
@@ -232,7 +232,34 @@
   <br />
 <div class="col-sm-12">
   <h1 style="margin: 25px auto; font-weight:300; color:#777;">My Solution Files</h1>
-  <table class="table table-hover" id="item-table">
+
+  <button id="view-my-submissions" class="btn btn-default" style="float:right; text-align:center; margin-bottom: 15px"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; My Submissions</button>
+  <button id="view-all-submissions" class="btn btn-default" style="float:right; text-align:center; margin-bottom: 15px"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; All Submissions</button>
+
+    <div id="my-or-all-submissions-info" class="signed-in">
+      <br>
+      <table id="my-or-all-submissions-table" class="table table-striped table-bordered table-hover table-responsive table-condensed assists-data col-xs-12">
+        <tr>
+          <th class="content-cell content-header col-xs-3" data-id={{id}}>Challenge</th>
+          <th class="content-cell content-header col-xs-3" data-id={{id}}>Language</th>
+          <th class="content-cell content-header col-xs-4" data-id={{id}}>Description</th>
+          <th class="content-cell content-header col-xs-1" data-id={{id}}>Submissions</th>
+          <th class="content-cell content-header col-xs-1" data-id={{id}}>Delete</th>
+        </tr>
+          <tr>
+            <td class="standings-cell standings-row col-xs-3" data-id={{id}}>challenge.name</td>
+            <td class="standings-cell standings-row col-xs-3" data-id={{id}}>challenge.language</td>
+            <td class="standings-cell standings-row col-xs-4" data-id={{id}}>challenge.description</td>
+            <td class="standings-cell standings-row col-xs-1" data-id={{id}}>Coming Soon</td>
+            <td class="standings-cell standings-row col-xs-1">
+              <button class="btn btn-default assist-delete-button admin-only" data-id={{id}}>Coming Soon</button>
+            </td>
+          </tr>
+      </table>
+    </div>
+
+
+  <!-- <table class="table table-hover" id="item-table">
     <tr>
       <td><h4 style="color:#000; text-decoration: underline">Pass/Fail</h4></td>
       <td><h4 style="color:#000; text-decoration: underline">Challenge Name</h4></td>
@@ -291,7 +318,7 @@
       </td>
   </tr>
 </tbody>
-  </table>
+  </table> -->
 </div>
 </div>
 </div>
