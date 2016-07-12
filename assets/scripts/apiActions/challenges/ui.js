@@ -31,36 +31,15 @@ const challengeCreated = (data) => {
 };
 
 const viewUserChallengesSuccess = (data) => {
-  $('.my-submissions').hide();
   $('.jumbotron').hide();
-  $('.item-table').hide();
-  $('#create-challenge-modal').modal('hide');
-  $('#my-or-all-challenges-info').html('');
-  $('#my-or-all-challenges-info').html(multipleChallengesTemplate(data));
-  $('#my-or-all-challenges-info').show();
-  $('#my-or-all-challenges-table').show();
-  $('#view-my-challenges').show();
-  $('#view-all-challenges').show();
-
-  $('#view-my-challenges').prop('disabled', true);
-  $('#view-all-challenges').prop('disabled', false);
+  $('#contents').empty();
+  $('#contents').html(multipleChallengesTemplate(data));
 };
 
 const viewAllChallengesSuccess = (data) => {
-  $('.my-submissions').hide();
   $('.jumbotron').hide();
-  $('.item-table').hide();
   $('#create-challenge-modal').modal('hide');
-
-  $('#my-or-all-challenges-info').html('');
-  $('#my-or-all-challenges-info').html(multipleChallengesTemplate(data));
-  $('#my-or-all-challenges-info').show();
-  $('#my-or-all-challenges-table').show();
-  $('#view-my-challenges').show();
-  $('#view-all-challenges').show();
-
-  $('#view-my-challenges').prop('disabled', false);
-  $('#view-all-challenges').prop('disabled', true);
+  $('#contents').html(multipleChallengesTemplate(data));
 };
 
 module.exports = {

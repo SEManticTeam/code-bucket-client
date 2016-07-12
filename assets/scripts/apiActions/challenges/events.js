@@ -19,12 +19,6 @@ const onViewUserChallenges = (event) => {
   .fail(ui.failure);
 };
 
-const onViewAllChallenges = (event) => {
-  event.preventDefault();
-  api.viewAllChallenges()
-  .done(ui.viewAllChallengesSuccess)
-  .fail(ui.failure);
-};
 
 const viewChallenges = (event) => {
   event.preventDefault();
@@ -32,8 +26,12 @@ const viewChallenges = (event) => {
   $('#contents').empty();
   $('#my-challenge-info').hide();
   $('#my-challenge-table').hide();
-  $('#view-all-challenges').click();
+  event.preventDefault();
+  api.viewAllChallenges()
+  .done(ui.viewAllChallengesSuccess)
+  .fail(ui.failure);
 };
+
 
 const onSelectChallenge = (event) => {
   event.preventDefault();
@@ -59,15 +57,14 @@ const onSelectChallenge = (event) => {
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
-  $('#view-my-challenges').on('click', onViewUserChallenges);
-  $('#view-all-challenges').on('click', onViewAllChallenges);
+  $(document).on('click','#view-my-challenges', onViewUserChallenges);
+  $(document).on('click','#view-all-challenges', viewChallenges);
   $(document).on('click', '.select-challenge', onSelectChallenge);
 };
 
 module.exports = {
   onCreateChallenge,
   onViewUserChallenges,
-  onViewAllChallenges,
   viewChallenges,
   addHandlers,
   onSelectChallenge,
