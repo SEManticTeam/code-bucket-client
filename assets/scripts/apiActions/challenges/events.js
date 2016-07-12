@@ -4,6 +4,8 @@ const getFormFields = require('../../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
+const app = require('../../app');
+
 const onCreateChallenge = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -66,6 +68,9 @@ const createSubmission = (event) => {
 $.ajax({
   method: 'POST',
   url: 'http://localhost:3000/submissions',
+  headers: {
+    Authorization: 'Token token=' + app.user.token,
+  },
   data: new FormData(event.target),
   contentType: false,
   processData: false,
