@@ -7,6 +7,7 @@ const drop = require('jquery-ui/ui/effects/effect-drop');
 
 const authEvents = require('./apiActions/auth/events.js');
 const challengeEvents = require('./apiActions/challenges/events.js');
+const submissionEvents = require('./apiActions/submissions/events.js');
 const helpers = require('./helpers');
 
 helpers.hideAll();
@@ -20,4 +21,5 @@ $(() => {
   authEvents.addHandlers();
   // authEvents.signInOrOut(); // do we need this function in addition to event handlers?
   challengeEvents.addHandlers();
+  submissionEvents.addHandlers();
 });
