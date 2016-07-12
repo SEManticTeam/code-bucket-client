@@ -37,9 +37,13 @@ const viewUserChallengesSuccess = (data) => {
 };
 
 const viewAllChallengesSuccess = (data) => {
+  console.log(data);
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
   $('#contents').html(multipleChallengesTemplate(data));
+};
+
+const deleteChallengeSuccess = (data) => {
 };
 
 module.exports = {

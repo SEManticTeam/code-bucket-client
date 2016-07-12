@@ -33,8 +33,19 @@ const viewAllChallenges = () => {
   });
 };
 
+const deleteChallenge = (id) => {
+  return $.ajax({
+    url: app.host + '/challenges/' + id,
+    method: "DELETE",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   create,
   viewUserChallenges,
   viewAllChallenges,
+  deleteChallenge,
 };

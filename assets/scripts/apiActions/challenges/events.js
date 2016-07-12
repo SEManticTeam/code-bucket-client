@@ -54,12 +54,22 @@ const onSelectChallenge = (event) => {
   $('.single-challenge-view').show();
 };
 
+const onDeleteChallenge = (event) => {
+  event.preventDefault();
+  let id= $(event.target).parent().data("id");
+  api.deleteChallenge(id)
+  .done(ui.deleteChallengeSuccess)
+  .then(() => $(event.target).parent().parent().empty())
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
   $(document).on('click','#view-my-challenges', onViewUserChallenges);
   $(document).on('click','#view-all-challenges', viewChallenges);
   $(document).on('click', '.select-challenge', onSelectChallenge);
+  $(document).on('click', '.delete-challenge', onDeleteChallenge);
 };
 
 module.exports = {
@@ -68,4 +78,5 @@ module.exports = {
   viewChallenges,
   addHandlers,
   onSelectChallenge,
+  onDeleteChallenge,
 };
