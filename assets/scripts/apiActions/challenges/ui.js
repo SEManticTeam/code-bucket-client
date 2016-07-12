@@ -1,5 +1,6 @@
 'use strict';
 
+const app = require('../../app.js');
 const fileinput = require('../../fileinput.js');
 
 const singleChallenge = require('../../templates/singleChallenge.handlebars');
@@ -21,10 +22,13 @@ const challengeCreated = (data) => {
   $('#create-challenge-modal').modal('hide');
   data.challenge.createdAt = data.challenge.createdAt.split('T')[0];
   $('#contents').html(singleChallenge(data));
-  $("#input-ficons-1").fileinput({
-    uploadUrl: "/file-upload-batch/2",
+  $("#button").fileinput({
+    uploadUrl: app.host + "/submissions",
     uploadAsync: true,
     showCaption: true,
+    ajaxSettings: {headers: {
+        Authorization: 'Token token=' + app.user.token,
+      }},
     previewFileIcon: '<i class="fa fa-file"></i>',
     allowedPreviewTypes: ['image', 'html', 'text', 'video', 'audio', 'flash', 'object'],
   });
