@@ -21,7 +21,6 @@ const onViewUserChallenges = (event) => {
   .fail(ui.failure);
 };
 
-
 const viewChallenges = (event) => {
   event.preventDefault();
   $('.jumbotron').hide();
@@ -32,31 +31,22 @@ const viewChallenges = (event) => {
   .fail(ui.failure);
 };
 
-
 const onSelectChallenge = (event) => {
   event.preventDefault();
-  let data = event.target;
-  console.log(data);
-
-  $('.jumbotron').hide();
-  $('.my-submissions').hide();
-  $('.all-challenges').hide();
-  $('#my-challenge-info').hide();
-  $('#my-challenge-table').hide();
-  $('.item-table').hide();
-  $('#my-or-all-challenges-info').hide();
-  $('#my-or-all-challenges-table').hide();
-  $('#view-my-challenges').hide();
-  $('#view-all-challenges').hide();
-  $('.single-challenge-view').html('');
-  let submitChallengeTemplate = require('../../templates/singleChallenge.handlebars');
-  $('.single-challenge-view').html(submitChallengeTemplate(data));
-  $('.single-challenge-view').show();
+  let id = $(event.target).parent().data("id");
+  api.showChallenge(id)
+  .done(ui.showChallengeSuccess)
+  .then(
+    api.showChallengeSubmissions(id)
+    .done(ui.appendSubmissionsSuccess)
+    .fail(ui.failure)
+  )
+  .fail(ui.failure);
 };
 
 const onDeleteChallenge = (event) => {
   event.preventDefault();
-  let id= $(event.target).parent().data("id");
+  let id = $(event.target).parent().data("id");
   api.deleteChallenge(id)
   .done(ui.deleteChallengeSuccess)
   .then(() => $(event.target).parent().parent().empty())

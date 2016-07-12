@@ -1,0 +1,37 @@
+<div class="content">
+  <div class="single-challenge">
+    <br />
+    <h1>{{challenge.name}}</h1>
+    <div id="challenge-info">
+    <h5 style="color:#777">Language: {{challenge.language}}</h5>
+    <h5 style="color:#000">Description: {{challenge.description}}</h5>
+    </div>
+    <hr>
+    <br />
+    <div class="col-sm-12">
+      <h3 style="color:#777; font-weight:300">Submit A Solution</h3>
+      <form id="upload-form" enctype="multipart/form-data">
+        <input id="fileinput" name="upload[file]" data-id={{challenge._id}} type="file" class="file-loading">
+      </form>
+      <h1 style="font-weight:300">Submissions:</h1>
+      <table class="table table-hover" id="item-table">
+        <tr>
+          <td><h4 style="color:#000; text-decoration: underline">Pass/Fail</h4></td>
+          <td><h4 style="color:#000; text-decoration: underline">Submitted By</h4></td>
+          <td><h4 style="color:#000; text-decoration: underline">Date Submitted</h4></td>
+          <td><h4 style="color:#000; text-decoration: underline">Lines of Code</h4></td>
+        </tr>
+        <tbody>
+      <tr>
+          <td id="grade" style="padding-top: 3%">
+            <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
+          </td>
+          <td><h4>Misha Herscu</h4></td>
+          <td><h4>{{challenge.createdAt}}</h4></td>
+          <td><h4 style="color:#000">12</h4></td>
+      </tr>
+    </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ const fileinput = require('../../fileinput.js');
 const singleChallenge = require('../../templates/singleChallenge.handlebars');
 
 const multipleChallengesTemplate = require('../../templates/multipleChallenges.handlebars');
+const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
 
 const failure = (error) => {
   console.error(error);
@@ -13,7 +14,6 @@ const failure = (error) => {
 const success = (data) => {
   console.log(data);
 };
-
 
 const challengeCreated = (data) => {
   $('.all-challenges').hide();
@@ -38,6 +38,17 @@ const viewAllChallengesSuccess = (data) => {
 };
 
 const deleteChallengeSuccess = (data) => {
+  console.log(data);
+};
+
+const showChallengeSuccess = (data) => {
+  $('.jumbotron').hide();
+  $('#contents').empty();
+  $('#contents').html(showChallengeTemplate(data));
+};
+
+const appendSubmissionsSuccess = (data) => {
+  console.log(data);
 };
 
 module.exports = {
@@ -46,4 +57,7 @@ module.exports = {
   viewAllChallengesSuccess,
   viewUserChallengesSuccess,
   success,
+  showChallengeSuccess,
+  appendSubmissionsSuccess,
+  deleteChallengeSuccess,
 };
