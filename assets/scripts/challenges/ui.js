@@ -15,6 +15,7 @@ const challengeCreated = (data) => {
   $('.my-submissions').hide();
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
+  data.challenge.createdAt = data.challenge.createdAt.split('T')[0];
   $('#contents').html(singleChallenge(data));
   $("#input-ficons-1").fileinput({
     uploadUrl: "/file-upload-batch/2",
