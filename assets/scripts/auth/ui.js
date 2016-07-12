@@ -34,23 +34,30 @@ const signInSuccess = (data) => {
   $('#signed-out').hide();
   $('.signed-in').show();
   $('.jumbotron').show();
-  $('#welcome').html('<h1>Hello, ' + app.user.givenName +'</h1>');
+  $('.intro').hide();
+  $('.welcome').show();
+  $('.welcome').html('<h1>Hello, ' + app.user.givenName +'</h1>');
 };
 
 const signOutSuccess = (data) => {
   app.user = null;
   $('#signout-modal').modal('hide');
   $('#password-modal').modal('hide');
-  $('#signed-in').hide();
-  $('.signed-in').hide();
-  $('.jumbotron').hide();
-  $('#signed-out').show();
-  $('.content').empty();
   $('#signup-email').val('');
   $('#signup-password').val('');
   $('#signup-password-confirmation').val('');
   $('#signin-email').val('');
   $('#signin-password').val('');
+  $('#signed-in').hide();
+  $('.signed-in').hide();
+  $('.content').empty();
+  $('#signed-out').show();
+  $('.jumbotron').show();
+  $('.welcome').hide();
+  $('.intro').show();
+  $('.step1').hide();
+  $('.step2').hide();
+  $('.step3').hide();
 };
 
 const changePasswordSuccess = (data) => {
