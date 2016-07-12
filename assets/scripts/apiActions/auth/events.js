@@ -1,14 +1,10 @@
 'use strict';
-// const sortable = require('jquery-ui/ui/widgets/sortable');
-// const shake = require('jquery-ui/ui/effects/effect-shake');
-// const slide = require('jquery-ui/ui/effects/effect-slide');
-// const drop = require('jquery-ui/ui/effects/effect-drop');
 
-const getFormFields = require('../../../lib/get-form-fields');
+const getFormFields = require('../../../../lib/get-form-fields');
 // const app = require('../app.js');
 const api = require('./api');
 const ui = require('./ui');
-const helpers = require('./helpers');
+const helpers = require('../../helpers');
 
 const onSignUp = (event) => {
   event.preventDefault();

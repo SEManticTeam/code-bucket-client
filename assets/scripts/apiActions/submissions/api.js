@@ -1,6 +1,6 @@
 'use strict';
 
-const app = require('../app.js');
+const app = require('../../app.js');
 
 const createSubmission = (data) => {
     return $.ajax({

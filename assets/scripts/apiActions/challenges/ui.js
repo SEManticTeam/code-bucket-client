@@ -5,14 +5,28 @@
 //
 // const fileInput = require('../fileinput.js');
 
-const singleChallenge = require('../templates/singleChallenge.handlebars');
+const singleChallenge = require('../../templates/singleChallenge.handlebars');
 
 const success = (data) => {
-  console.log(data);
+  console.log('data in generic success handler: ', data);
 };
 
 const failure = (error) => {
   console.error(error);
+};
+
+const viewUserChallengesSuccess = (data) => {
+  console.log('data.challenges from AJAX call: ', data);
+  $('.my-submissions').hide();
+  $('.jumbotron').hide();
+  $('.item-table').hide();
+  $('#create-challenge-modal').modal('hide');
+
+  $('#my-challenges-info').html('');
+  let myChallengesTemplate = require('../../templates/myChallenges.handlebars');
+  $('#my-challenges-info').html(myChallengesTemplate(data));
+  $('#my-challenge-info').show();
+  $('#my-challenge-table').show();
 };
 
 const challengeCreated = (data) => {
@@ -35,5 +49,6 @@ const challengeCreated = (data) => {
 module.exports = {
   success,
   failure,
+  viewUserChallengesSuccess,
   challengeCreated,
 };

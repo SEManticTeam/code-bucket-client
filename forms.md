@@ -51,7 +51,7 @@ module.exports = {
 ```js
 'use strict';
 
-const getFormFields = require('../../lib/get-form-fields');
+const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
@@ -60,6 +60,6 @@ $(() => {
     let data = getFormFields(this);
     e.preventDefault();
     api.myRequest(data, ui.success, ui.failure);
-  });  
+  });
 });
 ```
