@@ -8,6 +8,7 @@ const hideAll = () => {
   $('.my-submissions').hide();
   $('#my-challenge-info').hide();
   $('#my-challenge-table').hide();
+  $('.single-challenge-view').hide();
 };
 
 // sarah should check over this function

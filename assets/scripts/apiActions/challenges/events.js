@@ -39,11 +39,9 @@ const viewChallenges = (event) => {
 
 const onSelectChallenge = (event) => {
   event.preventDefault();
-
-  console.log('on select challenge running');
+  let data = event.target.id;
 
   $('.jumbotron').hide();
-  $('.single-challenge').hide();
   $('.my-submissions').hide();
   $('.all-challenges').hide();
   $('#my-challenge-info').hide();
@@ -54,7 +52,10 @@ const onSelectChallenge = (event) => {
   $('#view-my-challenges').hide();
   $('#view-all-challenges').hide();
 
-  $('.single-challenge').show();
+  $('.single-challenge-view').html('');
+  let submitChallengeTemplate = require('../../templates/singleChallenge.handlebars');
+  $('.single-challenge-view').html(submitChallengeTemplate(data));
+  $('.single-challenge-view').show();
 };
 
 const addHandlers = () => {
