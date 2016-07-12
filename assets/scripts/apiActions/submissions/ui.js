@@ -24,6 +24,8 @@ const viewUserSubmissionsSuccess = (data) => {
   $('#my-or-all-submissions-info').html(myOrAllSubmissionsTemplate(data));
   $('#my-or-all-submissions-info').show();
   $('#my-or-all-submissions-table').show();
+  $('#view-my-submissions').show();
+  $('#view-all-submissions').show();
 
   $('#view-my-submissions').prop('disabled', true);
   $('#view-all-submissions').prop('disabled', false);
@@ -40,6 +42,8 @@ const viewAllSubmissionsSuccess = (data) => {
   $('#my-or-all-submissions-info').html(myOrAllSubmissionsTemplate(data));
   $('#my-or-all-submissions-info').show();
   $('#my-or-all-submissions-table').show();
+  $('#view-my-submissions').show();
+  $('#view-all-submissions').show();
 
   $('#view-my-submissions').prop('disabled', false);
   $('#view-all-submissions').prop('disabled', true);

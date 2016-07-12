@@ -57,6 +57,13 @@ const signOutSuccess = () => {
   // $('#signin-password').val('');
   $('#my-challenge-info').hide();
   $('#my-challenge-table').hide();
+
+  $('#view-my-challenges').hide();
+  $('#view-all-challenges').hide();
+  $('#view-my-submissions').hide();
+  $('#view-all-submissions').hide();
+  $('.all-challenges').hide();
+  $('.my-submissions').hide();
 };
 
 const changePasswordSuccess = () => {

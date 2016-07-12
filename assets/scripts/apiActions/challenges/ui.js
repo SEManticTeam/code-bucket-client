@@ -26,6 +26,8 @@ const viewUserChallengesSuccess = (data) => {
   $('#my-or-all-challenges-info').html(myOrAllChallengesTemplate(data));
   $('#my-or-all-challenges-info').show();
   $('#my-or-all-challenges-table').show();
+  $('#view-my-challenges').show();
+  $('#view-all-challenges').show();
 
   $('#view-my-challenges').prop('disabled', true);
   $('#view-all-challenges').prop('disabled', false);
@@ -42,6 +44,8 @@ const viewAllChallengesSuccess = (data) => {
   $('#my-or-all-challenges-info').html(myOrAllChallengesTemplate(data));
   $('#my-or-all-challenges-info').show();
   $('#my-or-all-challenges-table').show();
+  $('#view-my-challenges').show();
+  $('#view-all-challenges').show();
 
   $('#view-my-challenges').prop('disabled', false);
   $('#view-all-challenges').prop('disabled', true);
