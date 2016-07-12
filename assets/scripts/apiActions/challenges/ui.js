@@ -25,13 +25,18 @@ const challengeCreated = (data) => {
   $("#button").fileinput({
     uploadUrl: app.host + "/submissions",
     uploadAsync: true,
-    showCaption: true,
-    ajaxSettings: {headers: {
+    ajaxSettings: { headers: {
         Authorization: 'Token token=' + app.user.token,
-      }},
+      },
+  },
     previewFileIcon: '<i class="fa fa-file"></i>',
     allowedPreviewTypes: ['image', 'html', 'text', 'video', 'audio', 'flash', 'object'],
-  });
+});
+$('#button').on('fileuploaded', function(event, data, previewId, index) {
+    let form = data.form;
+    let files = data.files;
+    console.log(files);
+});
 };
 
 const viewUserChallengesSuccess = (data) => {
