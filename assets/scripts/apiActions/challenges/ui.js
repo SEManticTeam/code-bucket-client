@@ -1,13 +1,18 @@
 'use strict';
 
-const app = require('../app.js');
-const api = require('./api.js');
-
-const fileInput = require('../fileinput.js');
+// const app = require('../app.js');
+// const api = require('./api.js');
+//
+// const fileInput = require('../fileinput.js');
 
 const singleChallenge = require('../templates/singleChallenge.handlebars');
 
+const success = (data) => {
+  console.log(data);
+};
+
 const failure = (error) => {
+  console.error(error);
 };
 
 const challengeCreated = (data) => {
@@ -23,12 +28,12 @@ const challengeCreated = (data) => {
     showCaption: true,
     previewFileIcon: '<i class="fa fa-file"></i>',
     allowedPreviewTypes: ['image', 'html', 'text', 'video', 'audio', 'flash', 'object'],
-});
+  });
   console.log(data);
-}
-
+};
 
 module.exports = {
+  success,
   failure,
   challengeCreated,
 };

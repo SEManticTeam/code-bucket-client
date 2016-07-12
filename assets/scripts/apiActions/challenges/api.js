@@ -2,7 +2,7 @@
 
 const app = require('../app.js');
 
-const createChallenge = (data) => {
+const create = (data) => {
     return $.ajax({
       url: app.host + '/challenges',
       method: "POST",
@@ -13,6 +13,17 @@ const createChallenge = (data) => {
     });
   };
 
+const viewUserChallenges = () => {
+  return $.ajax({
+    url: app.host + '/user-challenges',
+    method: "GET",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
-  createChallenge,
+  create,
+  viewUserChallenges,
 };
