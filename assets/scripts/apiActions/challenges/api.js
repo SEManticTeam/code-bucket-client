@@ -23,7 +23,18 @@ const viewUserChallenges = () => {
   });
 };
 
+const viewAllChallenges = () => {
+  return $.ajax({
+    url: app.host + '/challenges',
+    method: "GET",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   create,
   viewUserChallenges,
+  viewAllChallenges,
 };

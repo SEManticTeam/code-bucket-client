@@ -16,17 +16,35 @@ const failure = (error) => {
 };
 
 const viewUserChallengesSuccess = (data) => {
-  console.log('data.challenges from AJAX call: ', data);
   $('.my-submissions').hide();
   $('.jumbotron').hide();
   $('.item-table').hide();
   $('#create-challenge-modal').modal('hide');
 
-  $('#my-challenges-info').html('');
-  let myChallengesTemplate = require('../../templates/myChallenges.handlebars');
-  $('#my-challenges-info').html(myChallengesTemplate(data));
-  $('#my-challenge-info').show();
-  $('#my-challenge-table').show();
+  $('#my-or-all-challenges-info').html('');
+  let myOrAllChallengesTemplate = require('../../templates/myOrAllChallenges.handlebars');
+  $('#my-or-all-challenges-info').html(myOrAllChallengesTemplate(data));
+  $('#my-or-all-challenges-info').show();
+  $('#my-or-all-challenges-table').show();
+
+  $('#view-my-challenges').prop('disabled', true);
+  $('#view-all-challenges').prop('disabled', false);
+};
+
+const viewAllChallengesSuccess = (data) => {
+  $('.my-submissions').hide();
+  $('.jumbotron').hide();
+  $('.item-table').hide();
+  $('#create-challenge-modal').modal('hide');
+
+  $('#my-or-all-challenges-info').html('');
+  let myOrAllChallengesTemplate = require('../../templates/myOrAllChallenges.handlebars');
+  $('#my-or-all-challenges-info').html(myOrAllChallengesTemplate(data));
+  $('#my-or-all-challenges-info').show();
+  $('#my-or-all-challenges-table').show();
+
+  $('#view-my-challenges').prop('disabled', false);
+  $('#view-all-challenges').prop('disabled', true);
 };
 
 const challengeCreated = (data) => {
@@ -50,5 +68,6 @@ module.exports = {
   success,
   failure,
   viewUserChallengesSuccess,
+  viewAllChallengesSuccess,
   challengeCreated,
 };

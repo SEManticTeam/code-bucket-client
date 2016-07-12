@@ -19,6 +19,13 @@ const onViewUserChallenges = (event) => {
   .fail(ui.failure);
 };
 
+const onViewAllChallenges = (event) => {
+  event.preventDefault();
+  api.viewAllChallenges()
+  .done(ui.viewAllChallengesSuccess)
+  .fail(ui.failure);
+};
+
 const viewChallenges = (event) => {
   event.preventDefault();
   $('.jumbotron').hide();
@@ -27,17 +34,20 @@ const viewChallenges = (event) => {
   $('.all-challenges').show();
   $('#my-challenge-info').hide();
   $('#my-challenge-table').hide();
+  $('#view-all-challenges').click();
 };
 
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
   $('#view-my-challenges').on('click', onViewUserChallenges);
+  $('#view-all-challenges').on('click', onViewAllChallenges);
 };
 
 module.exports = {
   onCreateChallenge,
   onViewUserChallenges,
+  onViewAllChallenges,
   viewChallenges,
   addHandlers,
 };
