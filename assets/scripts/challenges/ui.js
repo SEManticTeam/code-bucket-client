@@ -8,10 +8,14 @@ const failure = (error) => {
 
 const challengeCreated = (data) => {
   console.log(data);
-}
+};
 
+const deleteChallengeSuccess = (data) => {
+  console.log(data);
+};
 
 module.exports = {
   failure,
   challengeCreated,
+  deleteChallengeSuccess,
 };
