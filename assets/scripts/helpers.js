@@ -1,5 +1,6 @@
 'use strict';
 
+// this function needs more
 const hideAll = () => {
   $('.signed-in').hide();
   $('.signed-out').hide();
@@ -7,6 +8,7 @@ const hideAll = () => {
   $(".my-submissions").hide();
 };
 
+// sarah should check over this function
 const runBanner = () => {
   $('.step1').hide();
   $('.step2').hide();
