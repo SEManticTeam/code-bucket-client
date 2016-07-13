@@ -30,9 +30,9 @@
 <table class="table table-hover" id="item-table">
   <tr>
     <td><h4 style="color:#000; text-decoration: underline">Challenge Name</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline"># Files</h4></td>
     <td><h4 style="color:#000; text-decoration: underline">Language</h4></td>
     <td><h4 style="color:#000; text-decoration: underline">Created By</h4></td>
-    <td><h4 style="color:#000; text-decoration: underline"># Files</h4></td>
       <td><h4 style="color:#000; text-decoration: underline">Delete</h4></td>
     <td><h4 style="color:#000; text-decoration: underline">Open</h4></td>
   </tr>
@@ -40,16 +40,19 @@
 {{#each challenges}}
   <tr>
     <td><h4>{{name}}</h4></td>
-    <td><h4>{{language}}</h4></td>
-    <td id="select-challenge" style="padding-top: 2%; color:#000">
-      <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
-    </td>
     <td><h4 style="color:#000">244</h4></td>
+    <td><h4>{{language}}</h4></td>
     {{#if currentUserOwned}}
+      <td id="select-challenge">
+        <h5><span style="color:#777" class="glyphicon glyphicon-user"></span> You</h5>
+      </td>
       <td class="delete-challenge" style="padding-top: 2%" data-id={{_id}}>
         <span style="color:black" class="glyphicon glyphicon-trash"></span>
       </td>
     {{else}}
+    <td id="select-challenge" style="padding-top: 2%; color:#000">
+      <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
+    </td>
       <td style="padding-top: 2%" data-id={{_id}} disabled>
         <span style="color:black; opacity:.2" class="glyphicon glyphicon-trash"></span>
       </td>

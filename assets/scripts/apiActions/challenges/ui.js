@@ -67,7 +67,20 @@ const showChallengeSuccess = (data) => {
   $("#fileinput").fileinput();
 };
 
+const setSubmissionPermissions = (submissionData) => {
+  let submissionArray = submissionData.submissions;
+  submissionArray = submissionArray.map((s) => {
+    let currentSubmission = s;
+    if(currentSubmission._owner === app.user._id){
+      currentSubmission.currentUserOwned = true;
+    }
+    return currentSubmission;
+  });
+  return submissionArray;
+};
+
 const appendSubmissionsSuccess = (data) => {
+  data.submissions = setSubmissionPermissions(data);
   data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
   $('#challenge-submission-div').html(challengeSubmissionsTemplate(data));
 };
@@ -82,4 +95,5 @@ module.exports = {
   appendSubmissionsSuccess,
   deleteChallengeSuccess,
   setDeletePermissions,
+  setSubmissionPermissions,
 };
