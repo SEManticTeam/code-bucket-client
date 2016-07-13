@@ -52,7 +52,10 @@ const deleteSubmissionSuccess = (data) => {
 };
 
 const reSubmissionSuccess = (data) => {
-  console.log(data);
+  $('.fileinput-remove-button').trigger('click');
+  $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(800).fadeOut();
+  $('#resubmitModal').modal('hide');
+  $('#view-my-submissions').trigger('click');
 };
 
 module.exports = {
