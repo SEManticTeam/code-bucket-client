@@ -222,6 +222,26 @@
           </div>
         </div>
       </div>
+
+      <!-- ReSubmit File Modal -->
+
+      <div class="modal fade" id="resubmitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" style="text-align: center">Resubmit Your Solution</h4>
+            </div>
+            <div class="modal-body">
+              <form id="reupload-form" enctype="multipart/form-data">
+                <input id="fileinput-resubmit" name="upload[file]" type="file" class="file-loading">
+                <input id="resubmitSubmissionId" type="hidden" name="resubmitSubmissionId">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <br>
   </body>

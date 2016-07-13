@@ -45,6 +45,19 @@ const viewUserSubmissions = () => {
   });
   };
 
+  const reSubmission = (data, id) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/submissions/' + id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+    contentType: false,
+    processData: false,
+  });
+  };
+
   const deleteSubmission = (id) => {
     return $.ajax({
       url: app.host + '/submissions/' + id,
@@ -61,4 +74,5 @@ module.exports = {
   viewUserSubmissions,
   createSubmission,
   deleteSubmission,
+  reSubmission,
 };
