@@ -34,6 +34,13 @@ const viewUserChallengesSuccess = (data) => {
 const viewAllChallengesSuccess = (data) => {
   $('.jumbotron').hide();
   $('#contents').empty();
+  data.challenges = data.challenges.map((c) => {
+    let currentChallenge = c;
+    if(currentChallenge._owner === app.user._id){
+      currentChallenge.currentUserOwned = true;
+    }
+    return currentChallenge;
+  });
   $('#contents').html(multipleChallengesTemplate(data));
 };
 
