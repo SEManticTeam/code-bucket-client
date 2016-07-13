@@ -69,9 +69,16 @@ $.ajax({
 .fail((error) => { console.error(error);});
 };
 
+// const setChallengeOwnerName = () => {
+//   console.log(app.user.givenName + ' ' + app.user.surname);
+//   console.log('\"' + app.user.givenName + ' ' + app.user.surname + '\"');
+//   $('#challenge-owner-name').val('\"' + app.user.givenName + ' ' + app.user.surname + '\"');
+// };
+
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
+  // $('#open-create-challenge').on('click', setChallengeOwnerName);
   $(document).on('click','#view-my-challenges', onViewUserChallenges);
   $(document).on('click','#view-all-challenges', viewChallenges);
   $(document).on('click', '.select-challenge', onSelectChallenge);
@@ -87,4 +94,5 @@ module.exports = {
   onSelectChallenge,
   onDeleteChallenge,
   createSubmission,
+  // setChallengeOwnerName,
 };

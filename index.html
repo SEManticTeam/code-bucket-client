@@ -109,7 +109,7 @@
       <div class="signed-in">
       <a href="#" id="view-submissions" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">My Submissions</a>
       <a href="#" id="view-challenges" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">View Challenges</a>
-      <a href="#" class="btn btn-default navbar-btn navbar-right" role="button" data-toggle="modal"
+      <a href="#" id="open-create-challenge" class="btn btn-default navbar-btn navbar-right" role="button" data-toggle="modal"
       data-target="#create-challenge-modal" style="margin-right: 5px">Create Challenge</a>
      </div>
   </div>
@@ -129,6 +129,7 @@
                   <fieldset class="form-group">
                   <label for="challenge-name"><span style="color:#31708f" class="glyphicon glyphicon-folder-open"></span>&nbsp; Name Your Challenge</label>
                   <input type="text" class="form-control" name="challenge[name]" id="challenge-name" placeholder="Challenge Name">
+                  <!-- <input type="hidden" name="challenge[ownerName]" id="challenge-owner-name"> -->
                 </fieldset>
                 <fieldset class="form-group">
                   <label for="challenge[language]">What Programming Language?</label>
