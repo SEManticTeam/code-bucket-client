@@ -31,11 +31,22 @@ const onSubmitUploadForm = (event) => {
   ;
 };
 
+const onDeleteSubmission = (event) => {
+  event.preventDefault();
+  let id = $(event.target).parent().data("id");
+  api.deleteSubmission(id)
+  .done(ui.deleteSubmissionSuccess)
+  .then(() => $(event.target).parent().parent().empty())
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#view-submissions').on('click', onViewSubmissions);
   $('#view-my-submissions').on('click', onViewUserSubmissions);
   $('#view-all-submissions').on('click', onViewSubmissions);
   $(document).on('submit', '#upload-form', onSubmitUploadForm);
+  $(document).on('click', '#delete-submission', onDeleteSubmission);
+
 };
 
 module.exports = {
@@ -43,4 +54,5 @@ module.exports = {
   onViewUserSubmissions,
   onSubmitUploadForm,
   addHandlers,
+  onDeleteSubmission,
 };

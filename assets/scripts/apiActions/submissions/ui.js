@@ -42,10 +42,15 @@ const submissionSuccess = (data) => {
   .fail(failure);
 };
 
+const deleteSubmissionSuccess = (data) => {
+  console.log(data);
+};
+
 module.exports = {
   success,
   failure,
   viewUserSubmissionsSuccess,
   viewAllSubmissionsSuccess,
   submissionSuccess,
+  deleteSubmissionSuccess,
 };

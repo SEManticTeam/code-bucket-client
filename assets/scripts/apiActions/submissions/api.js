@@ -56,9 +56,20 @@ const viewUserSubmissions = () => {
   });
   };
 
+  const deleteSubmission = (id) => {
+    return $.ajax({
+      url: app.host + '/submissions/' + id,
+      method: "DELETE",
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+    });
+  };
+
 module.exports = {
   viewAllSubmissions,
   show,
   viewUserSubmissions,
   createSubmission,
+  deleteSubmission,
 };
