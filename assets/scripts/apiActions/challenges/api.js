@@ -78,6 +78,21 @@ const incrementSubmissionCount = (data) => {
   });
 };
 
+const decrementSubmissionCount = (data) => {
+  return $.ajax({
+    url: app.host + '/challenges/' + data.challenge._id,
+    method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: {
+      challenge: {
+        submissionCount: data.challenge.submissionCount - 1,
+      }
+    }
+  });
+};
+
 module.exports = {
   create,
   viewUserChallenges,
@@ -86,4 +101,5 @@ module.exports = {
   showChallenge,
   showChallengeSubmissions,
   incrementSubmissionCount,
+  decrementSubmissionCount,
 };

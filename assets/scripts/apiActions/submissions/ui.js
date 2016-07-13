@@ -50,7 +50,11 @@ const submissionSuccess = (data) => {
 };
 
 const deleteSubmissionSuccess = (data) => {
-  console.log(data);
+  let id = data.responseSubmission._challenge;
+  console.log(data.responseSubmission._challenge);
+  challengeApi.showChallenge(id)
+  .then((data) => challengeApi.decrementSubmissionCount(data))
+  .fail(challengeUi.failure);
 };
 
 module.exports = {
