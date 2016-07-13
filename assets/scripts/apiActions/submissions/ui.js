@@ -37,9 +37,16 @@ const submissionSuccess = (data) => {
   let id = data.upload._challenge;
   $('.upload-container').hide();
   $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1200).fadeOut();
-  challengeApi.showChallengeSubmissions(id)
-  .done(challengeUi.appendSubmissionsSuccess)
-  .fail(failure);
+  challengeApi.showChallenge(id)
+  .then((data) => challengeApi.incrementSubmissionCount(data)
+    .then(
+      challengeApi.showChallengeSubmissions(id)
+      .done(challengeUi.appendSubmissionsSuccess)
+      .fail(challengeUi.failure)
+    )
+    .fail(challengeUi.failure)
+  )
+  .fail(challengeUi.failure);
 };
 
 const deleteSubmissionSuccess = (data) => {

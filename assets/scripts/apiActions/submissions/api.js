@@ -32,21 +32,10 @@ const viewUserSubmissions = () => {
   });
 };
 
-// const createSubmission = (data) => {
-//     return $.ajax({
-//       url: app.host + '/submissions',
-//       method: "POST",
-//       headers: {
-//         Authorization: 'Token token=' + app.user.token,
-//       },
-//       data: data,
-//     });
-//   };
-
   const createSubmission = (data) => {
   return $.ajax({
     method: 'POST',
-    url: 'http://localhost:3000/submissions',
+    url: app.host + '/submissions',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },

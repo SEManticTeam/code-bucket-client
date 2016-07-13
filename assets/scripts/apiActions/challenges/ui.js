@@ -18,6 +18,7 @@ const success = (data) => {
 };
 
 const challengeCreated = (data) => {
+  console.log(data.challenge);
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
   $('#contents').html(showChallengeTemplate(data));
