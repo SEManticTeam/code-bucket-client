@@ -51,10 +51,15 @@ const deleteSubmissionSuccess = (data) => {
   .fail(challengeUi.failure);
 };
 
+const reSubmissionSuccess = (data) => {
+  console.log(data);
+};
+
 module.exports = {
   success,
   failure,
   viewSubmissionsSuccess,
   submissionSuccess,
   deleteSubmissionSuccess,
+  reSubmissionSuccess,
 };

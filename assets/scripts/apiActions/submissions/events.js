@@ -1,8 +1,9 @@
 'use strict';
 
-// const getFormFields = require('../../../../lib/get-form-fields');
+const getFormFields = require('../../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
+const fileinput = require('../../fileinput.js');
 // const challengeEvents = require('../challenges/events');
 
 const onViewUserSubmissions = (event) => {
@@ -40,10 +41,33 @@ const onDeleteSubmission = (event) => {
   .fail(ui.failure);
 };
 
+const onResubmit = (event) => {
+  event.preventDefault();
+  let id = $(event.target).parent().data("id");
+  $('#resubmitSubmissionId').val(id);
+  $('#resubmitModal').modal('show');
+};
+
+const onSubmitReUpload = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
+  let id = data.resubmitSubmissionId;
+  console.log(id);
+  let formData = new FormData(event.target);
+  api.reSubmission(formData, id)
+  .done(ui.reSubmissionSuccess)
+  .fail(ui.failure)
+  ;
+};
+
 const addHandlers = () => {
   $('#view-submissions').on('click', onViewSubmissions);
   $('#view-my-submissions').on('click', onViewUserSubmissions);
   $('#view-all-submissions').on('click', onViewSubmissions);
+  $('#reupload-form').on('submit', onSubmitReUpload);
+  $('#fileinput-resubmit').fileinput();
+  $(document).on('click', '#resubmit', onResubmit);
   $(document).on('submit', '#upload-form', onSubmitUploadForm);
   $(document).on('click', '#delete-submission', onDeleteSubmission);
 };
@@ -54,4 +78,6 @@ module.exports = {
   onSubmitUploadForm,
   addHandlers,
   onDeleteSubmission,
+  onResubmit,
+  onSubmitReUpload,
 };
