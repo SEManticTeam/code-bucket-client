@@ -35,8 +35,10 @@ const viewAllSubmissionsSuccess = (data) => {
 
 const submissionSuccess = (data) => {
   let id = data.upload._challenge;
+  $('.fileinput-remove-button').trigger('click');
   $('.upload-container').hide();
   $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1200).fadeOut();
+  $('.upload-container').delay(1200).fadeIn();
   challengeApi.showChallenge(id)
   .then((data) => challengeApi.incrementSubmissionCount(data)
     .then(
