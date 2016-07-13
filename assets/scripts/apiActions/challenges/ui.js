@@ -25,22 +25,31 @@ const challengeCreated = (data) => {
   $("#fileinput").fileinput();
 };
 
-const viewUserChallengesSuccess = (data) => {
-  $('.jumbotron').hide();
-  $('#contents').empty();
-  $('#contents').html(multipleChallengesTemplate(data));
-};
-
-const viewAllChallengesSuccess = (data) => {
-  $('.jumbotron').hide();
-  $('#contents').empty();
-  data.challenges = data.challenges.map((c) => {
+const setDeletePermissions = (challengeData) => {
+  let challengeArray = challengeData.challenges;
+  challengeArray = challengeArray.map((c) => {
     let currentChallenge = c;
     if(currentChallenge._owner === app.user._id){
       currentChallenge.currentUserOwned = true;
     }
     return currentChallenge;
   });
+  return challengeArray;
+};
+
+const viewUserChallengesSuccess = (data) => {
+  $('.jumbotron').hide();
+  $('#contents').empty();
+  console.log(data.challenges);
+  data.challenges = setDeletePermissions(data);
+  console.log(data.challenges);
+  $('#contents').html(multipleChallengesTemplate(data));
+};
+
+const viewAllChallengesSuccess = (data) => {
+  $('.jumbotron').hide();
+  $('#contents').empty();
+  data.challenges = setDeletePermissions(data);
   $('#contents').html(multipleChallengesTemplate(data));
 };
 
@@ -71,4 +80,5 @@ module.exports = {
   showChallengeSuccess,
   appendSubmissionsSuccess,
   deleteChallengeSuccess,
+  setDeletePermissions,
 };
