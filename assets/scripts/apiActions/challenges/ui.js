@@ -39,19 +39,13 @@ const setDeletePermissions = (challengeData) => {
   return challengeArray;
 };
 
-const viewUserChallengesSuccess = (data) => {
-  $('.jumbotron').hide();
-  $('#contents').empty();
-  console.log(data.challenges);
-  data.challenges = setDeletePermissions(data);
-  console.log(data.challenges);
-  $('#contents').html(multipleChallengesTemplate(data));
-};
-
-const viewAllChallengesSuccess = (data) => {
+const viewChallengesSuccess = (data) => {
   $('.jumbotron').hide();
   $('#contents').empty();
   data.challenges = setDeletePermissions(data);
+  data.challenges.sort((a, b) => {
+    return a.submissionCount - b.submissionCount;
+  }).reverse();
   $('#contents').html(multipleChallengesTemplate(data));
 };
 
@@ -89,8 +83,7 @@ const appendSubmissionsSuccess = (data) => {
 module.exports = {
   failure,
   challengeCreated,
-  viewAllChallengesSuccess,
-  viewUserChallengesSuccess,
+  viewChallengesSuccess,
   success,
   showChallengeSuccess,
   appendSubmissionsSuccess,

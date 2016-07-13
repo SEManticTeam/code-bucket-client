@@ -17,7 +17,7 @@ const onCreateChallenge = (event) => {
 const onViewUserChallenges = (event) => {
   event.preventDefault();
   api.viewUserChallenges()
-  .done(ui.viewUserChallengesSuccess)
+  .done(ui.viewChallengesSuccess)
   .fail(ui.failure);
 };
 
@@ -27,7 +27,7 @@ const viewChallenges = (event) => {
   $('#contents').empty();
   event.preventDefault();
   api.viewAllChallenges()
-  .done(ui.viewAllChallengesSuccess)
+  .done(ui.viewChallengesSuccess)
   .fail(ui.failure);
 };
 
@@ -88,5 +88,4 @@ module.exports = {
   onSelectChallenge,
   onDeleteChallenge,
   createSubmission,
-  // setChallengeOwnerName,
 };
