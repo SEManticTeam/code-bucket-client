@@ -14,7 +14,11 @@ You can resubmit your files and wait for the challenge creator to grade your sol
 * Ajax & JSON
 * Mongoose
 
-## User Stories, Wireframes, Entity Relationship Diagrams
+## Challenges biggest learning moments
+
+Hack Stash was created as a group project. This allowed us to internalize the workflow of Git and Github. As a group we supported each other and and were able to move quicker.
+
+## User Stories & Wireframes & Entity Relationship Diagrams
 
 * [User Stories](https://drive.google.com/open?id=1RUwCdpCluMVKH013oftEp0ktprOYSie9pCZaFuh7a50)
 
@@ -25,10 +29,9 @@ You can resubmit your files and wait for the challenge creator to grade your sol
 
 ## Ideas For Future Iterations
 
+As the next step we would love to integrate another third party API that could allow users of Hack Stash to automatically get the submission files graded.
 
 ## Links
-
-* [Link To API hosted on Heroku] (https://askfsd.com)
 
 * [Link To Repo of API] (https://github.com/SEManticTeam/code-bucket-api)
 
