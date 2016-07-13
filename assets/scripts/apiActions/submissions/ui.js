@@ -51,11 +51,15 @@ const deleteSubmissionSuccess = (data) => {
   .fail(challengeUi.failure);
 };
 
-const reSubmissionSuccess = (data) => {
+const reloadSubmissions = () => {
+  window.setTimeout(() => $('#view-my-submissions').trigger('click'), 1500);
+};
+
+const reSubmissionSuccess = () => {
   $('.fileinput-remove-button').trigger('click');
-  $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(800).fadeOut();
   $('#resubmitModal').modal('hide');
-  $('#view-my-submissions').trigger('click');
+  $('#submit-success').html('<h4 style="color:green; font-weight:300"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1400).fadeOut();
+  reloadSubmissions();
 };
 
 module.exports = {
