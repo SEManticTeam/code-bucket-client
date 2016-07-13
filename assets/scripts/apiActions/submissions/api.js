@@ -32,15 +32,28 @@ const viewUserSubmissions = () => {
   });
 };
 
-const createSubmission = (data) => {
-    return $.ajax({
-      url: app.host + '/submissions',
-      method: "POST",
-      headers: {
-        Authorization: 'Token token=' + app.user.token,
-      },
-      data: data,
-    });
+// const createSubmission = (data) => {
+//     return $.ajax({
+//       url: app.host + '/submissions',
+//       method: "POST",
+//       headers: {
+//         Authorization: 'Token token=' + app.user.token,
+//       },
+//       data: data,
+//     });
+//   };
+
+  const createSubmission = (data) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'http://localhost:3000/submissions',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+    contentType: false,
+    processData: false,
+  });
   };
 
 module.exports = {

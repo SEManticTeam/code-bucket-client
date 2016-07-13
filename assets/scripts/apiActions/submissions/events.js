@@ -3,6 +3,7 @@
 // const getFormFields = require('../../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
+const challengeEvents = require('../challenges/events');
 
 const onViewUserSubmissions = (event) => {
   event.preventDefault();
@@ -25,7 +26,7 @@ const onSubmitUploadForm = (event) => {
   event.preventDefault();
   let data = new FormData(event.target);
   api.createSubmission(data)
-  .done(ui.success)
+  .done(ui.submissionSuccess)
   .fail(ui.failure)
   ;
 };
@@ -34,7 +35,7 @@ const addHandlers = () => {
   $('#view-submissions').on('click', onViewSubmissions);
   $('#view-my-submissions').on('click', onViewUserSubmissions);
   $('#view-all-submissions').on('click', onViewSubmissions);
-  $(document).on('submit', '#multipart-form-data', onSubmitUploadForm);
+  $(document).on('submit', '#upload-form', onSubmitUploadForm);
 };
 
 module.exports = {

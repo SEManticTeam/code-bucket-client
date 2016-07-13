@@ -5,6 +5,7 @@ const fileinput = require('../../fileinput.js');
 const singleChallenge = require('../../templates/singleChallenge.handlebars');
 
 const multipleChallengesTemplate = require('../../templates/multipleChallenges.handlebars');
+const multipleSubmissionsTemplate = require('../../templates/multipleSubmissions.handlebars');
 const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
 
 const failure = (error) => {
@@ -16,13 +17,10 @@ const success = (data) => {
 };
 
 const challengeCreated = (data) => {
-  console.log(data);
-  $('.all-challenges').hide();
-  $('.my-submissions').hide();
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
-  data.challenge.createdAt = data.challenge.createdAt.split('T')[0];
-  $('#contents').html(singleChallenge(data));
+  $('#contents').html(showChallengeTemplate(data));
+  $('.upload-container').show();
   $("#fileinput").fileinput();
 };
 
@@ -47,11 +45,14 @@ const showChallengeSuccess = (data) => {
   $('.jumbotron').hide();
   $('#contents').empty();
   $('#contents').html(showChallengeTemplate(data));
+  $('.upload-container').show();
   $("#fileinput").fileinput();
 };
 
 const appendSubmissionsSuccess = (data) => {
   console.log(data);
+  data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
+  $('#challenge-submission-div').html(multipleSubmissionsTemplate(data));
 };
 
 module.exports = {

@@ -76,7 +76,7 @@ const addHandlers = () => {
   $(document).on('click','#view-all-challenges', viewChallenges);
   $(document).on('click', '.select-challenge', onSelectChallenge);
   $(document).on('click', '.delete-challenge', onDeleteChallenge);
-  $(document).on('submit', '#upload-form', createSubmission);
+  $(document).on('submit', '#upload-forms', createSubmission);
 };
 
 module.exports = {
