@@ -18,8 +18,8 @@ You can resubmit your files and wait for the challenge creator to grade your sol
 
 Hack Stash was created as a group project. This allowed us to internalize the workflow of Git and Github. As a group we supported each other and and were able to move quicker.
 
-- Virtual attributes in Moongoose that queries a different Schema are going to fail because they are return asynchronous
-- When using Handlebars to generate html one needs to manipulating the data when it comes back directly before it goes to handlebars. 
+1. Virtual attributes in Moongoose that queries a different Schema are going to fail because they are return asynchronous
+2. When using Handlebars to generate html one needs to manipulating the data when it comes back directly before it goes to handlebars. 
 
 ## User Stories & Wireframes & Entity Relationship Diagrams
 
