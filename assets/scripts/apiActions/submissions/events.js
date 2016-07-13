@@ -3,7 +3,7 @@
 // const getFormFields = require('../../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
-const challengeEvents = require('../challenges/events');
+// const challengeEvents = require('../challenges/events');
 
 const onViewUserSubmissions = (event) => {
   event.preventDefault();
