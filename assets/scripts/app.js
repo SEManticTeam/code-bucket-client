@@ -6,6 +6,7 @@ const app = {
   user: null,
   challenges: null,
   submissions: null,
+  currentUserChallenge: null,
 };
 
 module.exports = app;

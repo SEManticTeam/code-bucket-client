@@ -6,6 +6,15 @@ const ui = require('./ui');
 
 const app = require('../../app');
 
+const checkChallengeOwner = (ownerId) => {
+  if(ownerId === app.user._id){
+    app.currentUserChallenge = true;
+  } else {
+    app.currentUserChallenge = false;
+  }
+  return true;
+};
+
 const onCreateChallenge = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -34,6 +43,9 @@ const viewChallenges = (event) => {
 const onSelectChallenge = (event) => {
   event.preventDefault();
   let id = $(event.target).parent().data("id");
+  let owner = $(event.target).parent().attr("name");
+  checkChallengeOwner(owner);
+
   api.showChallenge(id)
   .done(ui.showChallengeSuccess)
   .then(
@@ -88,4 +100,5 @@ module.exports = {
   onSelectChallenge,
   onDeleteChallenge,
   createSubmission,
+  checkChallengeOwner,
 };

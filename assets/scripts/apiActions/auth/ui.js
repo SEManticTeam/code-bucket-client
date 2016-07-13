@@ -41,6 +41,7 @@ const signInSuccess = (data) => {
 
 const signOutSuccess = () => {
   app.user = null;
+  app.currentUserChallenge = null;
   $('#signout-modal').modal('hide');
   $('#password-modal').modal('hide');
   $('#signup-email').val('');

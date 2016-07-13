@@ -8,6 +8,9 @@ const multipleChallengesTemplate = require('../../templates/multipleChallenges.h
 const multipleSubmissionsTemplate = require('../../templates/multipleSubmissions.handlebars');
 const challengeSubmissionsTemplate = require('../../templates/challengeSubmissions.handlebars');
 const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
+const myChallengeSubmissionsTemplate = require('../../templates/myChallengeSubmissions.handlebars');
+
+const events = require('./events');
 
 const failure = (error) => {
   console.error(error);
@@ -18,9 +21,9 @@ const success = (data) => {
 };
 
 const challengeCreated = (data) => {
-  console.log(data.challenge);
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
+  events.checkChallengeOwner();
   $('#contents').html(showChallengeTemplate(data));
   $('#set-challengeName').val(data.challenge.name);
   $('.upload-container').show();
@@ -75,9 +78,14 @@ const setSubmissionPermissions = (submissionData) => {
 };
 
 const appendSubmissionsSuccess = (data) => {
-  data.submissions = setSubmissionPermissions(data);
-  data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
-  $('#challenge-submission-div').html(challengeSubmissionsTemplate(data));
+  if (app.currentUserChallenge === true){
+    data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
+    $('#challenge-submission-div').html(myChallengeSubmissionsTemplate(data));
+  } else {
+    data.submissions = setSubmissionPermissions(data);
+    data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
+    $('#challenge-submission-div').html(challengeSubmissionsTemplate(data));
+  }
 };
 
 module.exports = {
