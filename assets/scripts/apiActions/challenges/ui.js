@@ -6,6 +6,7 @@ const singleChallenge = require('../../templates/singleChallenge.handlebars');
 
 const multipleChallengesTemplate = require('../../templates/multipleChallenges.handlebars');
 const multipleSubmissionsTemplate = require('../../templates/multipleSubmissions.handlebars');
+const challengeSubmissionsTemplate = require('../../templates/challengeSubmissions.handlebars');
 const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
 
 const failure = (error) => {
@@ -68,7 +69,7 @@ const showChallengeSuccess = (data) => {
 
 const appendSubmissionsSuccess = (data) => {
   data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
-  $('#challenge-submission-div').html(multipleSubmissionsTemplate(data));
+  $('#challenge-submission-div').html(challengeSubmissionsTemplate(data));
 };
 
 module.exports = {
