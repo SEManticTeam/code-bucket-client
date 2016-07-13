@@ -16,6 +16,7 @@ const success = (data) => {
 };
 
 const challengeCreated = (data) => {
+  console.log(data);
   $('.all-challenges').hide();
   $('.my-submissions').hide();
   $('.jumbotron').hide();
@@ -42,9 +43,11 @@ const deleteChallengeSuccess = (data) => {
 };
 
 const showChallengeSuccess = (data) => {
+  console.log(data);
   $('.jumbotron').hide();
   $('#contents').empty();
   $('#contents').html(showChallengeTemplate(data));
+  $("#fileinput").fileinput();
 };
 
 const appendSubmissionsSuccess = (data) => {

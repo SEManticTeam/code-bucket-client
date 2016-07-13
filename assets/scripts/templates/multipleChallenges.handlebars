@@ -1,4 +1,66 @@
-<div id="my-or-all-challenges-info" class="content">
+<div class="all-challenges">
+<div class="content">
+  <br />
+<div class="col-sm-12">
+<h1 style="font-weight:300; color:#777; margin-top: 25px;">Code Challenge Folders</h1>
+<div class="btn-group" style="float:left; text-align:center; margin-bottom: 15px">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Choose A Language <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+  <li><a href="#">Javascript</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#">Python</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#">Ruby</a></li>
+</ul>
+</div>
+<div class="btn-group" style="float:right; text-align:center; margin-bottom: 15px">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Select Challenges <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+  <li><a href="#" id="view-my-challenges">My Challenges</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#" id="view-all-challenges">All Challenges</a></li>
+</ul>
+</div>
+<!-- <button id="view-my-challenges" class="btn btn-default" style="float:right; text-align:center; margin-bottom: 15px"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; My Challenges</button> -->
+
+<table class="table table-hover" id="item-table">
+  <tr>
+    <td><h4 style="color:#000; text-decoration: underline"># of Files</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Challenge Name</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Language</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Created By</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Select</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Delete</h4></td>
+  </tr>
+  <tbody>
+{{#each challenges}}
+<tr>
+    <td><h4 style="color:#000">244</h4></td>
+    <td><h4>{{name}}</h4></td>
+    <td><h4>{{language}}</h4></td>
+    <td id="select-challenge" style="padding-top: 2%; color:#000">
+      <span style="color:#777" class="glyphicon glyphicon-user"></span> {{userNamer}}
+    </td>
+    <td id="show-challenge" style="padding-top: 2%" data-id={{_id}}>
+      <span style="color:black" class="glyphicon glyphicon-new-window select-challenge"></span>
+    </td>
+    <td class="delete-challenge" style="padding-top: 2%" data-id={{_id}}>
+      <span style="color:black" class="glyphicon glyphicon-trash"></span>
+    </td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<!-- <div id="my-or-all-challenges-info" class="content">
     <br />
     <div class="col-sm-12">
     <h1 style="font-weight:300; color:#777; margin-top: 25px;">Code Challenge Folders</h1>
@@ -41,4 +103,4 @@
       {{/each}}
     </table>
 </div>
-</div>
+</div> -->
