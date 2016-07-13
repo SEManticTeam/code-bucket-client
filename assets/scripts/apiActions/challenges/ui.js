@@ -20,6 +20,7 @@ const challengeCreated = (data) => {
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
   $('#contents').html(showChallengeTemplate(data));
+  $('#set-challengeName').val(data.challenge.name);
   $('.upload-container').show();
   $("#fileinput").fileinput();
 };
@@ -41,16 +42,15 @@ const deleteChallengeSuccess = (data) => {
 };
 
 const showChallengeSuccess = (data) => {
-  console.log(data);
   $('.jumbotron').hide();
   $('#contents').empty();
   $('#contents').html(showChallengeTemplate(data));
+  $('#set-challengeName').val(data.challenge.name);
   $('.upload-container').show();
   $("#fileinput").fileinput();
 };
 
 const appendSubmissionsSuccess = (data) => {
-  console.log(data);
   data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
   $('#challenge-submission-div').html(multipleSubmissionsTemplate(data));
 };

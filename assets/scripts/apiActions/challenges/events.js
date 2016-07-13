@@ -69,12 +69,6 @@ $.ajax({
 .fail((error) => { console.error(error);});
 };
 
-// const setChallengeOwnerName = () => {
-//   console.log(app.user.givenName + ' ' + app.user.surname);
-//   console.log('\"' + app.user.givenName + ' ' + app.user.surname + '\"');
-//   $('#challenge-owner-name').val('\"' + app.user.givenName + ' ' + app.user.surname + '\"');
-// };
-
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
