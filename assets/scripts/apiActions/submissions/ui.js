@@ -18,15 +18,7 @@ const failure = (error) => {
   console.error(error);
 };
 
-const viewUserSubmissionsSuccess = (data) => {
-  $('.jumbotron').hide();
-  $('#contents').empty();
-  data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
-  $('#contents').html(multipleSubmissionsTemplate(data));
-};
-
-const viewAllSubmissionsSuccess = (data) => {
-  console.log(data);
+const viewSubmissionsSuccess = (data) => {
   $('.jumbotron').hide();
   $('#contents').empty();
   data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
@@ -62,8 +54,7 @@ const deleteSubmissionSuccess = (data) => {
 module.exports = {
   success,
   failure,
-  viewUserSubmissionsSuccess,
-  viewAllSubmissionsSuccess,
+  viewSubmissionsSuccess,
   submissionSuccess,
   deleteSubmissionSuccess,
 };

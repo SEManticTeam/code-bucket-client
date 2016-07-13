@@ -8,7 +8,7 @@ const ui = require('./ui');
 const onViewUserSubmissions = (event) => {
   event.preventDefault();
   api.viewUserSubmissions()
-  .done(ui.viewUserSubmissionsSuccess)
+  .done(ui.viewSubmissionsSuccess)
   .fail(ui.failure);
 };
 
@@ -18,7 +18,7 @@ const onViewSubmissions = (event) => {
   $('.jumbotron').hide();
   $('#contents').empty();
   api.viewAllSubmissions()
-  .done(ui.viewAllSubmissionsSuccess)
+  .done(ui.viewSubmissionsSuccess)
   .fail(ui.failure);
 };
 
@@ -46,7 +46,6 @@ const addHandlers = () => {
   $('#view-all-submissions').on('click', onViewSubmissions);
   $(document).on('submit', '#upload-form', onSubmitUploadForm);
   $(document).on('click', '#delete-submission', onDeleteSubmission);
-
 };
 
 module.exports = {
