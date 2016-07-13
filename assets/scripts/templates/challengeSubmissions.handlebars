@@ -34,6 +34,19 @@
       <td id="delete-submission" data-id={{_id}} style="padding-top: 2%">
         <span style="color:black" class="glyphicon glyphicon-trash"></span>
       </td>
+      {{else if currentUserCreated}}
+      <td style="padding-top: 2%; color:#000">
+        <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
+      </td>
+      <td style="padding-top: 2%">
+        <a href={{location}} target="_blank"><span style="color:black" class="glyphicon glyphicon-download-alt"></span></a>
+      </td>
+      <td style="padding-top: 2%">
+        <span style="color:black; opacity:.2" class="glyphicon glyphicon-share"></span>
+      </td>
+      <td id="delete-submission" data-id={{_id}} style="padding-top: 2%">
+        <span style="color:black" class="glyphicon glyphicon-trash"></span>
+      </td>
       {{else}}
       <td style="padding-top: 2%; color:#000">
         <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
