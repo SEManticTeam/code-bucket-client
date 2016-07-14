@@ -114,7 +114,6 @@ const refreshChallenge = (id) => {
 };
 
 const gradeSubmissionSuccess = (data) => {
-  console.log(data);
   let id = data.submission._challenge;
   refreshChallenge(id);
 };

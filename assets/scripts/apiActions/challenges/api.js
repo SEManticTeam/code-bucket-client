@@ -94,8 +94,6 @@ const decrementSubmissionCount = (data) => {
 };
 
 const gradeSubmission= (passfail, id) => {
-  console.log(passfail);
-  console.log(id);
   return $.ajax({
     url: app.host + '/grade-submission/' + id,
     method: "PATCH",
