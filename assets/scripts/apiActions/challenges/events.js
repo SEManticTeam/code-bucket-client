@@ -49,6 +49,22 @@ const onSelectChallenge = (event) => {
   .fail(ui.failure);
 };
 
+const goToChallenge = (event) => {
+  event.preventDefault();
+  let id = $(event.target).parent().data("id");
+  let owner = null;
+  ui.checkChallengeOwner(owner);
+
+  api.showChallenge(id)
+  .done(ui.showChallengeSuccess)
+  .then(
+    api.showChallengeSubmissions(id)
+    .done(ui.appendSubmissionsSuccess)
+    .fail(ui.failure)
+  )
+  .fail(ui.failure);
+};
+
 const onDeleteChallenge = (event) => {
   event.preventDefault();
   let id = $(event.target).parent().data("id");
@@ -90,6 +106,7 @@ const onGradeSubmission = (event) => {
   .fail(ui.failure);
 };
 
+
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
@@ -100,6 +117,7 @@ const addHandlers = () => {
   $(document).on('click', '.delete-challenge', onDeleteChallenge);
   $(document).on('submit', '#upload-forms', createSubmission);
   $(document).on('submit', '#grade-form', onGradeSubmission);
+  $(document).on('click', '#go-to-challenge', goToChallenge);
 };
 
 module.exports = {
@@ -111,4 +129,5 @@ module.exports = {
   onDeleteChallenge,
   createSubmission,
   onGradeSubmission,
+  goToChallenge,
 };
