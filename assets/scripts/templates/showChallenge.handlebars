@@ -12,7 +12,7 @@
       <div class="upload-container">
       <h3 style="color:#777; font-weight:300">Submit A Solution</h3>
       <form id="upload-form" enctype="multipart/form-data">
-        <input id="fileinput" name="upload[file]" type="file" class="file-loading">
+        <input id="fileinput" name="upload[file]" type="file" class="file-loading" data-allowed-file-extensions='["js"]'>
         <input type="hidden" name="upload[challenge_id]" value={{challenge._id}}>
         <input type="hidden" name="upload[_challengeOwner]" value={{challenge._owner}}>
         <input id="set-challengeName" type="hidden" name="upload[challengeName]">
