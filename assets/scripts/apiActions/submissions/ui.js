@@ -51,15 +51,28 @@ const deleteSubmissionSuccess = (data) => {
   .fail(challengeUi.failure);
 };
 
-const reloadSubmissions = () => {
-  window.setTimeout(() => $('#view-my-submissions').trigger('click'), 1500);
+const reloadSubmissions = (data) => {
+  window.setTimeout(() => {
+      let id = data.submission._challenge;
+      let owner = data.submission._challengeOwner;
+      challengeUi.checkChallengeOwner(owner);
+
+      challengeApi.showChallenge(id)
+      .done(challengeUi.showChallengeSuccess)
+      .then(
+        challengeApi.showChallengeSubmissions(id)
+        .done(challengeUi.appendSubmissionsSuccess)
+        .fail(challengeUi.failure)
+      )
+      .fail(challengeUi.failure);
+  }, 1500);
 };
 
-const reSubmissionSuccess = () => {
+const reSubmissionSuccess = (data) => {
   $('.fileinput-remove-button').trigger('click');
   $('#resubmitModal').modal('hide');
   $('#submit-success').html('<h4 style="color:green; font-weight:300"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1400).fadeOut();
-  reloadSubmissions();
+  reloadSubmissions(data);
 };
 
 module.exports = {
