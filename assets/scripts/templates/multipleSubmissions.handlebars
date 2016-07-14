@@ -7,6 +7,7 @@
   <table class="table table-hover" id="item-table">
     <tr>
       <td><h4 style="color:#000; text-decoration: underline">Pass/Fail</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Auto Pass</h4></td>
       <td><h4 style="color:#000; text-decoration: underline">Challenge Name</h4></td>
       <td><h4 style="color:#000; text-decoration: underline">Date Submitted</h4></td>
       <td><h4 style="color:#000; text-decoration: underline">Download</h4></td>
@@ -31,6 +32,8 @@
         <span style="color:#000" class="glyphicon glyphicon-hourglass"></span> Awaiting Grade
       </td>
     {{/if}}
+
+      <td style="padding-top: 2%; color:#777">{{autoPass}}</td>
       <td id="go-to-challenge" data-id={{_challenge}}><h4>{{challengeName}}</h4></td>
       <td><h4>{{createdAt}}</h4></td>
       <td style="padding-top: 2%">
