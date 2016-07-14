@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Code Challenge</title>
+      <title>Hack Stash</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     </head>
 
     <body class="container-fluid">
-      <div class="logo">
-      </div>
-      <div id = "signed-out">
-
-<!-- Sign In Button -->
-        <div class="container">
-        	<div class="row">
-                <p class="text-center">
-                  <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
-                  data-target="#signin-modal">
-                   <span style="font-weight: 300; font-size: 28px">Sign In</span>
-                  </a>
-<!-- Sign Up Button -->
-                   <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
-                   data-target="#signup-modal">
-                      <span style="font-weight: 300; font-size: 28px">Sign Up</span>
-                  </a>
-                </p>
-           </div>
-      </div>
+      <div class="signed-out">
 
 <!-- Sign In Modal -->
       <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -64,8 +45,11 @@
               <form id="sign-up" style="text-align:center;">
                 <fieldset>
 
-                  <input type="text" name="credentials[name]"
-                  id="signup-name" placeholder="Your Name"><br /><br />
+                  <input type="text" name="credentials[givenName]"
+                  id="signup-first-name" placeholder="First Name"><br /><br />
+
+                  <input type="text" name="credentials[surname]"
+                  id="signup-last-name" placeholder="Last Name"><br /><br />
 
                   <input type="email" name="credentials[email]"
                   id="signup-email" placeholder="Your Email"><br /><br />
@@ -87,47 +71,121 @@
         </div>
       </div>
 
-</div>
+<!-- Nav Bar -->
+<nav class="navbar navbar-default navbar-fixed-top" style="height:70px; padding:1%;">
+  <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img class="logo" src="http://i.imgur.com/xNLSinR.png?1" width="160px">
+      </a>
+      <!-- Description -->
+      <h4 class="navbar-text">Code Challenge File Buckets</h4>
+      <!-- Nav Links -->
+      <div id="signed-out">
+       <!-- Sign Up Button -->
+       <a href="#" class="btn btn-default navbar-btn navbar-right" role="button" data-toggle="modal"
+       data-target="#signup-modal" style="margin-right: 5px">Sign Up</a>
+       <!-- Sign In Button -->
+       <a href="#" class="btn btn-default navbar-btn navbar-right" role="button" data-toggle="modal"
+       data-target="#signin-modal" style="margin-right: 5px">Sign In</a>
+     </div>
+     <div class="signed-in">
+      <!-- Sign Out Button -->
+      <div class="btn-group navbar-right" style="margin-right: 15px;">
+        <button type="button" class="btn btn-default dropdown-toggle navbar-btn navbar-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Account <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-toggle="modal" data-target="#password-modal">Edit Profile</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#" data-toggle="modal" data-target="#password-modal">Change Password</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#" data-toggle="modal" data-target="#signout-modal">Sign Out</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+      <div class="signed-in">
+      <a href="#" id="view-my-submissions" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">My Submissions</a>
+      <a href="#" id="view-challenges" class="btn btn-default navbar-btn navbar-right" role="button" style="margin-right: 5px">View Challenges</a>
+      <a href="#" id="open-create-challenge" class="btn btn-default navbar-btn navbar-right" role="button" data-toggle="modal"
+      data-target="#create-challenge-modal" style="margin-right: 5px">Create Challenge</a>
+     </div>
+  </div>
+</nav>
 
 
-<div id = "signed-in">
+  <!-- Create Challenge Modal -->
+        <div class="modal fade" id="create-challenge-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create Challenge</h4>
+              </div>
+              <div class="modal-body">
+                <form id="create-challenge-form" style="text-align:center;">
+                  <fieldset class="form-group">
+                  <label for="challenge-name"><span style="color:#31708f" class="glyphicon glyphicon-folder-open"></span>&nbsp; Name Your Challenge</label>
+                  <input type="text" class="form-control" name="challenge[name]" id="challenge-name" placeholder="Challenge Name">
+                  <!-- <input type="hidden" name="challenge[ownerName]" id="challenge-owner-name"> -->
+                </fieldset>
+                <fieldset class="form-group">
+                  <label for="challenge[language]">What Programming Language?</label>
+                  <select class="form-control" name="challenge[language]">
+                    <option>Javascript</option>
+                    <option disabled>Ruby</option>
+                    <option disabled>Python</option>
+                  </select>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="challenge[description]">What is the Challenge?</label>
+                    <textarea class="form-control" name="challenge[description]" rows="6"></textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="challenge[answer]">What is the Answer?</label>
+                    <textarea class="form-control" name="challenge[answer]" rows="2"></textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <input type="submit" name="submit" class="btn btn-md btn-default" value="Create Challenge">
+                </fieldset>
+                  <div id= "challenge-notes">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 <!-- Main Content-->
-<div style="clear: both;"></div>
+<div id="contents" style="clear: both;"></div>
 <center>
-  <div class="jumbotron">
-    <div id="welcome" style="text-align:center">
-    </div>
+  <div class="jumbotron signed-out">
+  <div class="welcome" style="text-align:center">
   </div>
-</center>
-<div class="content">
+  <div class="intro" style="text-align:center">
+    <h1>Hack Stash</h1>
+    <h2 style="color:#fff" class="step1">Users can Create Code Challenge Folders...</h2>
+    <h2 style="color:#fff" class="step2">Invite Other Users to Submit Solution Files...</h2>
+    <h2 style="color:#fff" class="step3">Then Grade & Rank All Submissions.</h2>
+    <h2 style="color:#fff" class="step4">Sign Up or Sign In to Start Hacking!</h2>
+  </div>
 </div>
+</center>
 
-<!-- Sign Out Button -->
-  <div id="account">
-        <div class="container">
+<div class="signed-in">
 
-            <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
-            data-target="#signout-modal">
-             <span style="font-size: 16px; font-weight: 300">Sign Out</span>
-           </a>
-
-<!-- Change Password Button -->
-
-           <a href="#" class="btn btn-default btn-lg" role="button" data-toggle="modal"
-           data-target="#password-modal">
-              <span style="font-size: 16px; font-weight: 300">Account</span>
-          </a>
-
-      </div>
-    </div>
 <!-- Sign Out Modal -->
     <div class="modal fade" id="signout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h3 class="modal-title" style="text-align: center">Are You Sure You Want to Sign Out?</h3>
+              <h4 class="modal-title" style="text-align: center">Are You Sure You Want to Sign Out?</h4>
             </div>
             <div class="modal-body">
                 <form id="sign-out">
@@ -147,7 +205,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h3 class="modal-title" style="text-align: center">Change Your Password</h3>
+              <h4 class="modal-title" style="text-align: center">Change Your Password</h4>
             </div>
             <div class="modal-body">
               <form id="change-password" style="text-align:center;">
@@ -167,6 +225,27 @@
           </div>
         </div>
       </div>
+
+      <!-- ReSubmit File Modal -->
+
+      <div class="modal fade" id="resubmitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" style="text-align: center">Resubmit Your Solution</h4>
+            </div>
+            <div class="modal-body">
+              <form id="reupload-form" enctype="multipart/form-data">
+                <input id="fileinput-resubmit" name="upload[file]" type="file" class="file-loading">
+                <input id="resubmitSubmissionId" type="hidden" name="resubmitSubmissionId">
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+
+    </div>
+    <br>
   </body>
   </html>

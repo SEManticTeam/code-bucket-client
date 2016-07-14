@@ -1,0 +1,71 @@
+<div class="my-submissions">
+<div class="content">
+  <br />
+<div class="col-sm-12">
+  <h1 style="margin: 25px auto; font-weight:300; color:#777;">Solution Files</h1>
+  <table class="table table-hover" id="item-table">
+    <tr>
+      <td><h4 style="color:#000; text-decoration: underline">Grade</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Auto Pass</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Date Submitted</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Submitted By</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Download</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Resubmit</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Delete</h4></td>
+    </tr>
+    <tbody>
+{{#each submissions}}
+  <tr>
+    {{#if graded}}
+      {{#if pass}}
+      <td id="grade" style="padding-top: 2%">
+        <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
+      </td>
+      {{else}}
+      <td id="grade" style="padding-top: 2%">
+        <span style="color:red" class="glyphicon glyphicon-thumbs-down"></span>
+      </td>
+      {{/if}}
+    {{else}}
+      <td id="grade" style="padding-top: 2%">
+        <span style="color:#000" class="glyphicon glyphicon-hourglass"></span> Awaiting Grade
+      </td>
+    {{/if}}
+      <td style="padding-top: 2%; color:#777">{{autoPass}}</td>
+      <td><h4>{{createdAt}}</h4></td>
+
+      {{#if currentUserOwned}}
+      <td style="padding-top: 2%;">
+        <span style="color:#777" class="glyphicon glyphicon-user"></span> You
+      </td>
+      <td style="padding-top: 2%">
+        <a href={{location}} target="_blank"><span style="color:black" class="glyphicon glyphicon-download-alt"></span></a>
+      </td>
+      <td id="resubmit" style="padding-top: 2%" data-id={{_id}}>
+        <span style="color:black" class="glyphicon glyphicon-share"></span>
+      </td>
+      <td id="delete-submission" data-id={{_id}} style="padding-top: 2%">
+        <span style="color:black" class="glyphicon glyphicon-trash"></span>
+      </td>
+      {{else}}
+      <td style="padding-top: 2%; color:#000">
+        <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
+      </td>
+      <td style="padding-top: 2%">
+        <span style="color:black; opacity:.2" class="glyphicon glyphicon-download-alt"></span>
+      </td>
+      <td style="padding-top: 2%">
+        <span style="color:black; opacity:.2" class="glyphicon glyphicon-share"></span>
+      </td>
+      <td data-id={{_id}} style="padding-top: 2%">
+        <span style="color:black; opacity:.2" class="glyphicon glyphicon-trash"></span>
+      </td>
+      {{/if}}
+  </tr>
+  {{/each}}
+
+</tbody>
+  </table>
+</div>
+</div>
+</div>

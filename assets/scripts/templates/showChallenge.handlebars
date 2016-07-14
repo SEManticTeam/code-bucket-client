@@ -1,0 +1,28 @@
+<div class="content">
+  <div class="single-challenge">
+    <br />
+    <h1>{{challenge.name}}</h1>
+    <div id="challenge-info">
+    <h5 style="color:#777">Language: {{challenge.language}}</h5>
+    <h4 style="color:#000; line-height:1.5">{{challenge.description}}</h4>
+    </div>
+    <hr>
+    <div class="col-sm-12">
+      <div id="submit-success"></div>
+      <div class="upload-container">
+      <h3 style="color:#777; font-weight:300">Submit A Solution</h3>
+      <form id="upload-form" enctype="multipart/form-data">
+        <input id="fileinput" name="upload[file]" type="file" class="file-loading" data-allowed-file-extensions='["js"]'>
+        <input type="hidden" name="upload[challenge_id]" value={{challenge._id}}>
+        <input type="hidden" name="upload[_challengeOwner]" value={{challenge._owner}}>
+        <input id="set-challengeName" type="hidden" name="upload[challengeName]">
+      </form>
+    </div>
+    <h5 style="font-weight:300; color:#777">Submission Files must be .js & less than 50 lines.</h5>
+      <div id="submit-success"></div>
+
+        <div id="challenge-submission-div">
+        </div>
+    </div>
+  </div>
+</div

@@ -1,0 +1,69 @@
+<div class="all-challenges">
+<div class="content">
+  <br />
+<div class="col-sm-12">
+<h1 style="font-weight:300; color:#777; margin-top: 25px;">Code Challenge Folders</h1>
+<div class="btn-group" style="float:left; text-align:center; margin-bottom: 15px">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Choose A Language <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+  <li><a href="#">Javascript</a></li>
+  <li role="separator" class="divider"></li>
+  <li><h4 style="color:#777">Python</li>
+  <li role="separator" class="divider"></li>
+  <li><h4 style="color:#777">Ruby</li>
+</ul>
+</div>
+<div class="btn-group" style="float:right; text-align:center; margin-bottom: 15px">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Select Challenges <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+  <li><a href="#" id="view-my-challenges">My Challenges</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#" id="view-all-challenges">All Challenges</a></li>
+</ul>
+</div>
+<!-- <button id="view-my-challenges" class="btn btn-default" style="float:right; text-align:center; margin-bottom: 15px"><span class="glyphicon glyphicon-folder-open"></span>&nbsp; My Challenges</button> -->
+
+<table class="table table-hover" id="item-table">
+  <tr>
+    <td><h4 style="color:#000; text-decoration: underline">Challenge Name</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Submissions</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Language</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Created By</h4></td>
+      <td><h4 style="color:#000; text-decoration: underline">Delete</h4></td>
+    <td><h4 style="color:#000; text-decoration: underline">Open</h4></td>
+  </tr>
+  <tbody>
+{{#each challenges}}
+  <tr>
+    <td><h4>{{name}}</h4></td>
+    <td><h4 style="color:#000">{{submissionCount}}</h4></td>
+    <td><h4>{{language}}</h4></td>
+    {{#if currentUserOwned}}
+      <td id="select-challenge">
+        <h5><span style="color:#777" class="glyphicon glyphicon-user"></span> You</h5>
+      </td>
+      <td class="delete-challenge" style="padding-top: 2%" data-id={{_id}}>
+        <span style="color:black" class="glyphicon glyphicon-trash"></span>
+      </td>
+    {{else}}
+    <td id="select-challenge" style="padding-top: 2%; color:#000">
+      <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
+    </td>
+      <td style="padding-top: 2%" data-id={{_id}} disabled>
+        <span style="color:black; opacity:.2" class="glyphicon glyphicon-trash"></span>
+      </td>
+    {{/if}}
+    <td style="padding-top: 2%" data-id={{_id}} name={{_owner}}>
+      <span style="color:black" class="glyphicon glyphicon-folder-open select-challenge"></span>
+    </td>
+  </tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+</div>
+</div>
