@@ -6,8 +6,6 @@ const ui = require('./ui');
 
 const app = require('../../app');
 
-
-
 const onCreateChallenge = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);

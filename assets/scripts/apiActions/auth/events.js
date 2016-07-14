@@ -23,7 +23,6 @@ const onSignIn = (event) => {
   api.signIn(data)
   .done(ui.signInSuccess)
   .fail(ui.signInFailure);
-
 };
 
 const onSignOut = (event) => {
@@ -40,7 +39,6 @@ const onChangePassword = (event) => {
   .done(ui.changePasswordSuccess)
   .fail(ui.changePasswordFailure);
 };
-
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
@@ -62,7 +60,7 @@ const signInOrOut = () => {
   }
 );
 };
-//
+
 module.exports = {
   addHandlers,
   signInOrOut,
