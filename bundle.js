@@ -3814,7 +3814,7 @@ webpackJsonp([0],[
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1._id : stack1), depth0))
 	    + ">\n        <input type=\"hidden\" name=\"upload[_challengeOwner]\" value="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1._owner : stack1), depth0))
-	    + ">\n        <input id=\"set-challengeName\" type=\"hidden\" name=\"upload[challengeName]\">\n      </form>\n    </div>\n    <h5 style=\"font-weight:300; color:#777\">Submission Files must be .js & less than 50 lines.</h5>\n      <div id=\"submit-success\"></div>\n    </div>\n  </div>\n        <div id=\"challenge-submission-div\">\n\n        </div>\n  </div\n";
+	    + ">\n        <input id=\"set-challengeName\" type=\"hidden\" name=\"upload[challengeName]\">\n      </form>\n    </div>\n    <h5 style=\"font-weight:300; color:#777\">Submission Files must be .js & less than 50 lines.</h5>\n      <div id=\"submit-success\"></div>\n\n        <div id=\"challenge-submission-div\">\n        </div>\n    </div>\n  </div>\n</div\n";
 	},"useData":true});
 
 /***/ },
