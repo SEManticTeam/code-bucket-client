@@ -65,7 +65,10 @@ const addHandlers = () => {
   $('#view-my-submissions').on('click', onViewUserSubmissions);
   $('#view-all-submissions').on('click', onViewSubmissions);
   $('#reupload-form').on('submit', onSubmitReUpload);
-  $('#fileinput-resubmit').fileinput();
+  $('#fileinput-resubmit').fileinput({
+    maxFileSize: 1000,
+    allowedFileExtensions: ['js']
+  });
   $(document).on('click', '#resubmit', onResubmit);
   $(document).on('submit', '#upload-form', onSubmitUploadForm);
   $(document).on('click', '#delete-submission', onDeleteSubmission);

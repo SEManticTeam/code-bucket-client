@@ -34,7 +34,10 @@ const challengeCreated = (data) => {
   $('#contents').html(showChallengeTemplate(data));
   $('#set-challengeName').val(data.challenge.name);
   $('.upload-container').show();
-  $("#fileinput").fileinput();
+  $("#fileinput").fileinput({
+    maxFileSize: 1000,
+    allowedFileExtensions: ['js'],
+  });
 };
 
 const setDeletePermissions = (challengeData) => {

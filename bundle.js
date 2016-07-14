@@ -2385,7 +2385,10 @@ webpackJsonp([0],[
 	  $('#contents').html(showChallengeTemplate(data));
 	  $('#set-challengeName').val(data.challenge.name);
 	  $('.upload-container').show();
-	  $("#fileinput").fileinput();
+	  $("#fileinput").fileinput({
+	    maxFileSize: 1000,
+	    allowedFileExtensions: ['js']
+	  });
 	};
 
 	var setDeletePermissions = function setDeletePermissions(challengeData) {
@@ -2558,7 +2561,7 @@ webpackJsonp([0],[
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 
-	  return "<div class=\"all-challenges\">\n<div class=\"content\">\n  <br />\n<div class=\"col-sm-12\">\n<h1 style=\"font-weight:300; color:#777; margin-top: 25px;\">Code Challenge Folders</h1>\n<div class=\"btn-group\" style=\"float:left; text-align:center; margin-bottom: 15px\">\n<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n  Choose A Language <span class=\"caret\"></span>\n</button>\n<ul class=\"dropdown-menu\">\n  <li><a href=\"#\">Javascript</a></li>\n  <li role=\"separator\" class=\"divider\"></li>\n  <li><a href=\"#\">Python</a></li>\n  <li role=\"separator\" class=\"divider\"></li>\n  <li><a href=\"#\">Ruby</a></li>\n</ul>\n</div>\n<div class=\"btn-group\" style=\"float:right; text-align:center; margin-bottom: 15px\">\n<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n  Select Challenges <span class=\"caret\"></span>\n</button>\n<ul class=\"dropdown-menu\">\n  <li><a href=\"#\" id=\"view-my-challenges\">My Challenges</a></li>\n  <li role=\"separator\" class=\"divider\"></li>\n  <li><a href=\"#\" id=\"view-all-challenges\">All Challenges</a></li>\n</ul>\n</div>\n<!-- <button id=\"view-my-challenges\" class=\"btn btn-default\" style=\"float:right; text-align:center; margin-bottom: 15px\"><span class=\"glyphicon glyphicon-folder-open\"></span>&nbsp; My Challenges</button> -->\n\n<table class=\"table table-hover\" id=\"item-table\">\n  <tr>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Challenge Name</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\"># Files</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Language</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Created By</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Delete</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Open</h4></td>\n  </tr>\n  <tbody>\n"
+	  return "<div class=\"all-challenges\">\n<div class=\"content\">\n  <br />\n<div class=\"col-sm-12\">\n<h1 style=\"font-weight:300; color:#777; margin-top: 25px;\">Code Challenge Folders</h1>\n<div class=\"btn-group\" style=\"float:left; text-align:center; margin-bottom: 15px\">\n<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n  Choose A Language <span class=\"caret\"></span>\n</button>\n<ul class=\"dropdown-menu\">\n  <li><a href=\"#\">Javascript</a></li>\n  <li role=\"separator\" class=\"divider\"></li>\n  <li><a href=\"#\" disabled>Python</a></li>\n  <li role=\"separator\" class=\"divider\"></li>\n  <li><a href=\"#\" disabled>Ruby</a></li>\n</ul>\n</div>\n<div class=\"btn-group\" style=\"float:right; text-align:center; margin-bottom: 15px\">\n<button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n  Select Challenges <span class=\"caret\"></span>\n</button>\n<ul class=\"dropdown-menu\">\n  <li><a href=\"#\" id=\"view-my-challenges\">My Challenges</a></li>\n  <li role=\"separator\" class=\"divider\"></li>\n  <li><a href=\"#\" id=\"view-all-challenges\">All Challenges</a></li>\n</ul>\n</div>\n<!-- <button id=\"view-my-challenges\" class=\"btn btn-default\" style=\"float:right; text-align:center; margin-bottom: 15px\"><span class=\"glyphicon glyphicon-folder-open\"></span>&nbsp; My Challenges</button> -->\n\n<table class=\"table table-hover\" id=\"item-table\">\n  <tr>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Challenge Name</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Submissions</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Language</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Created By</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Delete</h4></td>\n    <td><h4 style=\"color:#000; text-decoration: underline\">Open</h4></td>\n  </tr>\n  <tbody>\n"
 	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.challenges : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
 	    + "</tbody>\n</table>\n</div>\n</div>\n</div>\n";
 	},"useData":true});
@@ -3787,7 +3790,7 @@ webpackJsonp([0],[
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 
-	  return "<div class=\"my-submissions\">\n<div class=\"content\">\n  <br />\n<div class=\"col-sm-12\">\n  <h1 style=\"margin: 25px auto; font-weight:300; color:#777;\">Solution Files</h1>\n  <table class=\"table table-hover\" id=\"item-table\">\n    <tr>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Grade</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Auto Pass</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Date Submitted</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Submitted By</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Download</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Resubmit</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Delete</h4></td>\n    </tr>\n    <tbody>\n"
+	  return "<div class=\"my-submissions\">\n<div class=\"content\">\n  <br />\n<div class=\"col-sm-12\">\n  <h1 style=\"margin: 25px auto; font-weight:300; color:#777;\">Solution Files</h1>\n  <div id=\"submit-success\"><h5 style=\"font-weight:300; color:#777\">Files must be .js or .rb & less than 50 lines.</h5></div>\n  <table class=\"table table-hover\" id=\"item-table\">\n    <tr>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Grade</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Auto Pass</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Date Submitted</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Submitted By</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Download</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Resubmit</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Delete</h4></td>\n    </tr>\n    <tbody>\n"
 	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.submissions : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
 	    + "\n</tbody>\n  </table>\n</div>\n</div>\n</div>\n";
 	},"useData":true});
@@ -3807,7 +3810,7 @@ webpackJsonp([0],[
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1.language : stack1), depth0))
 	    + "</h5>\n    <h4 style=\"color:#000; line-height:1.5\">"
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1.description : stack1), depth0))
-	    + "</h4>\n    </div>\n    <hr>\n    <div class=\"col-sm-12\">\n      <div id=\"submit-success\"></div>\n      <div class=\"upload-container\">\n      <h3 style=\"color:#777; font-weight:300\">Submit A Solution</h3>\n      <form id=\"upload-form\" enctype=\"multipart/form-data\">\n        <input id=\"fileinput\" name=\"upload[file]\" type=\"file\" class=\"file-loading\">\n        <input type=\"hidden\" name=\"upload[challenge_id]\" value="
+	    + "</h4>\n    </div>\n    <hr>\n    <div class=\"col-sm-12\">\n      <div id=\"submit-success\"></div>\n      <div class=\"upload-container\">\n      <h3 style=\"color:#777; font-weight:300\">Submit A Solution</h3>\n      <form id=\"upload-form\" enctype=\"multipart/form-data\">\n        <input id=\"fileinput\" name=\"upload[file]\" type=\"file\" class=\"file-loading\" data-allowed-file-extensions='[\"js\"]'>\n        <input type=\"hidden\" name=\"upload[challenge_id]\" value="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1._id : stack1), depth0))
 	    + ">\n        <input type=\"hidden\" name=\"upload[_challengeOwner]\" value="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1._owner : stack1), depth0))
@@ -3935,7 +3938,10 @@ webpackJsonp([0],[
 	  $('#view-my-submissions').on('click', onViewUserSubmissions);
 	  $('#view-all-submissions').on('click', onViewSubmissions);
 	  $('#reupload-form').on('submit', onSubmitReUpload);
-	  $('#fileinput-resubmit').fileinput();
+	  $('#fileinput-resubmit').fileinput({
+	    maxFileSize: 1000,
+	    allowedFileExtensions: ['js']
+	  });
 	  $(document).on('click', '#resubmit', onResubmit);
 	  $(document).on('submit', '#upload-form', onSubmitUploadForm);
 	  $(document).on('click', '#delete-submission', onDeleteSubmission);
