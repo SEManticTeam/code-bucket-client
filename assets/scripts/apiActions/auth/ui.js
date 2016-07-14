@@ -32,6 +32,7 @@ const signInSuccess = (data) => {
   $('#signin-modal').modal('hide');
   $('#signup-modal').modal('hide');
   $('#signed-out').hide();
+  $('#body').toggleClass('intro-body');
   $('.signed-in').show();
   $('.jumbotron').show();
   $('.intro').hide();
