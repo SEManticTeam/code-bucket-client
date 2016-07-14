@@ -15,9 +15,21 @@
     <tbody>
 {{#each submissions}}
   <tr>
+    {{#if graded}}
+      {{#if pass}}
       <td id="grade" style="padding-top: 2%">
         <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
       </td>
+      {{else}}
+      <td id="grade" style="padding-top: 2%">
+        <span style="color:red" class="glyphicon glyphicon-thumbs-down"></span>
+      </td>
+      {{/if}}
+    {{else}}
+      <td id="grade" style="padding-top: 2%">
+        <span style="color:#000" class="glyphicon glyphicon-hourglass"></span> Awaiting Grade
+      </td>
+    {{/if}}
       <td><h4>{{createdAt}}</h4></td>
 
       {{#if currentUserOwned}}

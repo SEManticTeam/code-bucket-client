@@ -2,15 +2,24 @@
 
 const app = require('../../app.js');
 const fileinput = require('../../fileinput.js');
-const singleChallenge = require('../../templates/singleChallenge.handlebars');
+
+const api = require('./api.js');
 
 const multipleChallengesTemplate = require('../../templates/multipleChallenges.handlebars');
-const multipleSubmissionsTemplate = require('../../templates/multipleSubmissions.handlebars');
 const challengeSubmissionsTemplate = require('../../templates/challengeSubmissions.handlebars');
 const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
 const myChallengeSubmissionsTemplate = require('../../templates/myChallengeSubmissions.handlebars');
 
-const events = require('./events');
+const events = require('./events.js');
+
+const checkChallengeOwner = (ownerId) => {
+  if(ownerId === app.user._id){
+    app.currentUserChallenge = true;
+  } else {
+    app.currentUserChallenge = false;
+  }
+  return true;
+};
 
 const failure = (error) => {
   console.error(error);
@@ -23,7 +32,7 @@ const success = (data) => {
 const challengeCreated = (data) => {
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
-  events.checkChallengeOwner();
+  checkChallengeOwner(data.challenge._owner);
   $('#contents').html(showChallengeTemplate(data));
   $('#set-challengeName').val(data.challenge.name);
   $('.upload-container').show();
@@ -82,11 +91,32 @@ const appendSubmissionsSuccess = (data) => {
     data.submissions = setSubmissionPermissions(data);
     data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
     $('#challenge-submission-div').html(myChallengeSubmissionsTemplate(data));
+    $('.owner-grade').popover();
   } else {
     data.submissions = setSubmissionPermissions(data);
     data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
     $('#challenge-submission-div').html(challengeSubmissionsTemplate(data));
   }
+};
+
+const refreshChallenge = (id) => {
+  let owner = app.user._id;
+  checkChallengeOwner(owner);
+
+  api.showChallenge(id)
+  .done(showChallengeSuccess)
+  .then(
+    api.showChallengeSubmissions(id)
+    .done(appendSubmissionsSuccess)
+    .fail(failure)
+  )
+  .fail(failure);
+};
+
+const gradeSubmissionSuccess = (data) => {
+  console.log(data);
+  let id = data.submission._challenge;
+  refreshChallenge(id);
 };
 
 module.exports = {
@@ -99,4 +129,7 @@ module.exports = {
   deleteChallengeSuccess,
   setDeletePermissions,
   setSubmissionPermissions,
+  refreshChallenge,
+  gradeSubmissionSuccess,
+  checkChallengeOwner,
 };

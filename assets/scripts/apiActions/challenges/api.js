@@ -93,6 +93,24 @@ const decrementSubmissionCount = (data) => {
   });
 };
 
+const gradeSubmission= (passfail, id) => {
+  console.log(passfail);
+  console.log(id);
+  return $.ajax({
+    url: app.host + '/grade-submission/' + id,
+    method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: {
+      submission: {
+        graded: true,
+        pass: passfail,
+      }
+    }
+  });
+};
+
 module.exports = {
   create,
   viewUserChallenges,
@@ -102,4 +120,5 @@ module.exports = {
   showChallengeSubmissions,
   incrementSubmissionCount,
   decrementSubmissionCount,
+  gradeSubmission,
 };

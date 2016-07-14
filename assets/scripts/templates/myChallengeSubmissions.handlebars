@@ -15,9 +15,32 @@
     <tbody>
 {{#each submissions}}
   <tr>
+    {{#if graded}}
+      {{#if pass}}
       <td id="grade" style="padding-top: 2%">
         <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
       </td>
+      {{else}}
+      <td id="grade" style="padding-top: 2%">
+        <span style="color:red" class="glyphicon glyphicon-thumbs-down"></span>
+      </td>
+      {{/if}}
+    {{else}}
+      <td style="padding-top: 2%">
+        <button type="button" class="btn btn-default btn-sm owner-grade"
+        data-html="true" data-toggle="popover" data-id={{_id}}
+        data-placement="right" data-content='<form id="grade-form"><select name="passfail">
+        <option selected>Grade this Solution</option>
+        <option value="pass">Pass</option>
+        <option value="fail">Fail</option>
+      </select>
+      <input name="submissionId" type="hidden" value={{_id}}>
+      <button type="submit" class="btn btn-default btn-sm">Grade</button>
+    </form>'>
+          <span style="color:#000" class="glyphicon glyphicon-edit"></span> Grade Submission
+        </button>
+      </td>
+    {{/if}}
       <td><h4>{{createdAt}}</h4></td>
 
       {{#if currentUserOwned}}

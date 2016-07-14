@@ -6,14 +6,7 @@ const ui = require('./ui');
 
 const app = require('../../app');
 
-const checkChallengeOwner = (ownerId) => {
-  if(ownerId === app.user._id){
-    app.currentUserChallenge = true;
-  } else {
-    app.currentUserChallenge = false;
-  }
-  return true;
-};
+
 
 const onCreateChallenge = (event) => {
   event.preventDefault();
@@ -44,7 +37,7 @@ const onSelectChallenge = (event) => {
   event.preventDefault();
   let id = $(event.target).parent().data("id");
   let owner = $(event.target).parent().attr("name");
-  checkChallengeOwner(owner);
+  ui.checkChallengeOwner(owner);
 
   api.showChallenge(id)
   .done(ui.showChallengeSuccess)
@@ -81,6 +74,22 @@ $.ajax({
 .fail((error) => { console.error(error);});
 };
 
+const onGradeSubmission = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let id = data.submissionId;
+  let passfail;
+  if(data.passfail === 'pass') {
+    passfail = true;
+  }
+  else {
+    passfail = false;
+  };
+  api.gradeSubmission(passfail, id)
+  .done(ui.gradeSubmissionSuccess)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
@@ -90,6 +99,7 @@ const addHandlers = () => {
   $(document).on('click', '.select-challenge', onSelectChallenge);
   $(document).on('click', '.delete-challenge', onDeleteChallenge);
   $(document).on('submit', '#upload-forms', createSubmission);
+  $(document).on('submit', '#grade-form', onGradeSubmission);
 };
 
 module.exports = {
@@ -100,5 +110,5 @@ module.exports = {
   onSelectChallenge,
   onDeleteChallenge,
   createSubmission,
-  checkChallengeOwner,
+  onGradeSubmission,
 };
