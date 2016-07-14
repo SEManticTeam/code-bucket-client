@@ -4,7 +4,6 @@ const getFormFields = require('../../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 const fileinput = require('../../fileinput.js');
-const challengeEvents = require('../challenges/events');
 
 const onViewUserSubmissions = (event) => {
   event.preventDefault();
