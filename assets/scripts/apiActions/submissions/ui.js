@@ -1,12 +1,7 @@
 'use strict';
 
-// const app = require('../app.js');
 const challengeApi = require('../challenges/api.js');
 const challengeUi = require('../challenges/ui.js');
-
-//
-// const fileInput = require('../fileinput.js');
-
 
 const multipleSubmissionsTemplate = require('../../templates/multipleSubmissions.handlebars');
 
@@ -32,12 +27,12 @@ const submissionSuccess = (data) => {
   $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1200).fadeOut();
   $('.upload-container').delay(1200).fadeIn();
   challengeApi.showChallenge(id)
-  .then((data) => challengeApi.incrementSubmissionCount(data)
-    .then(
-      challengeApi.showChallengeSubmissions(id)
-      .done(challengeUi.appendSubmissionsSuccess)
-      .fail(challengeUi.failure)
-    )
+  .done((data) => challengeApi.incrementSubmissionCount(data)
+    .then(() => {
+        challengeApi.showChallengeSubmissions(id)
+        .done(challengeUi.appendSubmissionsSuccess)
+        .fail(challengeUi.failure);
+      })
     .fail(challengeUi.failure)
   )
   .fail(challengeUi.failure);
@@ -59,11 +54,11 @@ const reloadSubmissions = (data) => {
 
       challengeApi.showChallenge(id)
       .done(challengeUi.showChallengeSuccess)
-      .then(
+      .then(() => {
         challengeApi.showChallengeSubmissions(id)
         .done(challengeUi.appendSubmissionsSuccess)
-        .fail(challengeUi.failure)
-      )
+        .fail(challengeUi.failure);
+      })
       .fail(challengeUi.failure);
   }, 1500);
 };

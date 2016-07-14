@@ -10,8 +10,6 @@ const challengeSubmissionsTemplate = require('../../templates/challengeSubmissio
 const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
 const myChallengeSubmissionsTemplate = require('../../templates/myChallengeSubmissions.handlebars');
 
-const events = require('./events.js');
-
 const checkChallengeOwner = (ownerId) => {
   if(ownerId === app.user._id){
     app.currentUserChallenge = true;
@@ -61,8 +59,7 @@ const viewChallengesSuccess = (data) => {
   $('#contents').html(multipleChallengesTemplate(data));
 };
 
-const deleteChallengeSuccess = (data) => {
-  console.log(data);
+const deleteChallengeSuccess = () => {
 };
 
 const showChallengeSuccess = (data) => {
@@ -105,11 +102,11 @@ const refreshChallenge = (id) => {
 
   api.showChallenge(id)
   .done(showChallengeSuccess)
-  .then(
+  .then(() => {
     api.showChallengeSubmissions(id)
     .done(appendSubmissionsSuccess)
-    .fail(failure)
-  )
+    .fail(failure);
+  })
   .fail(failure);
 };
 

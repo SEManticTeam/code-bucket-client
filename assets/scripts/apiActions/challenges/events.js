@@ -41,11 +41,11 @@ const onSelectChallenge = (event) => {
 
   api.showChallenge(id)
   .done(ui.showChallengeSuccess)
-  .then(
+  .then(() => {
     api.showChallengeSubmissions(id)
     .done(ui.appendSubmissionsSuccess)
-    .fail(ui.failure)
-  )
+    .fail(ui.failure);
+  })
   .fail(ui.failure);
 };
 
@@ -57,11 +57,11 @@ const goToChallenge = (event) => {
 
   api.showChallenge(id)
   .done(ui.showChallengeSuccess)
-  .then(
+  .then(() => {
     api.showChallengeSubmissions(id)
     .done(ui.appendSubmissionsSuccess)
-    .fail(ui.failure)
-  )
+    .fail(ui.failure);
+  })
   .fail(ui.failure);
 };
 
@@ -100,17 +100,15 @@ const onGradeSubmission = (event) => {
   }
   else {
     passfail = false;
-  };
+  }
   api.gradeSubmission(passfail, id)
   .done(ui.gradeSubmissionSuccess)
   .fail(ui.failure);
 };
 
-
 const addHandlers = () => {
   $('#view-challenges').on('click', viewChallenges);
   $('#create-challenge-form').on('submit', onCreateChallenge);
-  // $('#open-create-challenge').on('click', setChallengeOwnerName);
   $(document).on('click','#view-my-challenges', onViewUserChallenges);
   $(document).on('click','#view-all-challenges', viewChallenges);
   $(document).on('click', '.select-challenge', onSelectChallenge);
