@@ -7,6 +7,12 @@ body {
   color: $font-color;
 }
 
+.intro-body {
+  background: url('http://i.imgur.com/NAn3ojT.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #content {
   margin: 5%;
 }
@@ -71,9 +77,15 @@ canvas {
 }
 
 .jumbotron {
-  background-color: #fff;
+  background: none;
+  color: #fff;
   margin-top: 40px;
   max-width: 75%;
+}
+
+.banner-text {
+  color: #FFF;
+  font-weight: 900;
 }
 
 label {
