@@ -51,7 +51,6 @@ const onResubmit = (event) => {
 const onSubmitReUpload = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
   let id = data.resubmitSubmissionId;
   console.log(id);
   let formData = new FormData(event.target);

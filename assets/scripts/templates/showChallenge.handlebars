@@ -4,7 +4,7 @@
     <h1>{{challenge.name}}</h1>
     <div id="challenge-info">
     <h5 style="color:#777">Language: {{challenge.language}}</h5>
-    <h5 style="color:#000">Description: {{challenge.description}}</h5>
+    <h4 style="color:#000; line-height:1.5">{{challenge.description}}</h4>
     </div>
     <hr>
     <div class="col-sm-12">
@@ -14,6 +14,7 @@
       <form id="upload-form" enctype="multipart/form-data">
         <input id="fileinput" name="upload[file]" type="file" class="file-loading">
         <input type="hidden" name="upload[challenge_id]" value={{challenge._id}}>
+        <input type="hidden" name="upload[_challengeOwner]" value={{challenge._owner}}>
         <input id="set-challengeName" type="hidden" name="upload[challengeName]">
       </form>
     </div>
@@ -21,12 +22,5 @@
 </div>
 </div>
         <div id="challenge-submission-div">
-      <!-- <tr>
-          <td id="grade" style="padding-top: 3%">
-            <span style="color:green" class="glyphicon glyphicon-thumbs-up"></span>
-          </td>
-          <td><h4>Misha Herscu</h4></td>
-          <td><h4>{{challenge.createdAt}}</h4></td>
-          <td><h4 style="color:#000">12</h4></td>
-      </tr> -->
-      </div>
+
+        </div>
