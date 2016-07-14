@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-  host: 'http://hackstash.herokuapp.com',
+  host: 'https://hackstash.herokuapp.com',
   // host: 'http://localhost:3000',
   user: null,
   currentUserChallenge: null,
