@@ -3790,7 +3790,7 @@ webpackJsonp([0],[
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 
-	  return "<div class=\"my-submissions\">\n<div class=\"content\">\n  <br />\n<div class=\"col-sm-12\">\n  <h1 style=\"margin: 25px auto; font-weight:300; color:#777;\">Solution Files</h1>\n  <div id=\"submit-success\"><h5 style=\"font-weight:300; color:#777\">Files must be .js or .rb & less than 50 lines.</h5></div>\n  <table class=\"table table-hover\" id=\"item-table\">\n    <tr>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Grade</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Auto Pass</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Date Submitted</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Submitted By</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Download</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Resubmit</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Delete</h4></td>\n    </tr>\n    <tbody>\n"
+	  return "<div class=\"my-submissions\">\n<div class=\"content\">\n  <br />\n<div class=\"col-sm-12\">\n  <h1 style=\"margin: 25px auto; font-weight:300; color:#777;\">Solution Files</h1>\n  <table class=\"table table-hover\" id=\"item-table\">\n    <tr>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Grade</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Auto Pass</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Date Submitted</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Submitted By</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Download</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Resubmit</h4></td>\n      <td><h4 style=\"color:#000; text-decoration: underline\">Delete</h4></td>\n    </tr>\n    <tbody>\n"
 	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.submissions : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
 	    + "\n</tbody>\n  </table>\n</div>\n</div>\n</div>\n";
 	},"useData":true});
@@ -3814,7 +3814,7 @@ webpackJsonp([0],[
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1._id : stack1), depth0))
 	    + ">\n        <input type=\"hidden\" name=\"upload[_challengeOwner]\" value="
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.challenge : depth0)) != null ? stack1._owner : stack1), depth0))
-	    + ">\n        <input id=\"set-challengeName\" type=\"hidden\" name=\"upload[challengeName]\">\n      </form>\n      <div id=\"submit-success\"><h4 style=\"font-weight:300; color:#777\">Manage All of Your Submissions</h4></div>\n    </div>\n  </div>\n</div>\n</div>\n        <div id=\"challenge-submission-div\">\n\n        </div>\n";
+	    + ">\n        <input id=\"set-challengeName\" type=\"hidden\" name=\"upload[challengeName]\">\n      </form>\n      <h5 style=\"font-weight:300; color:#777\">Files must be .js or & less than 50 lines.</h5>\n      <div id=\"submit-success\">\n    </div>\n  </div>\n</div>\n</div>\n        <div id=\"challenge-submission-div\">\n\n        </div>\n";
 	},"useData":true});
 
 /***/ },
