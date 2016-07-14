@@ -2015,7 +2015,7 @@ webpackJsonp([0],[
 	  $('#signin-modal').modal('hide');
 	  $('#signup-modal').modal('hide');
 	  $('#signed-out').hide();
-	  $('#body').toggleClass('intro-body');
+	  $('body').toggleClass('intro-body');
 	  $('.signed-in').show();
 	  $('.jumbotron').show();
 	  $('.intro').hide();
