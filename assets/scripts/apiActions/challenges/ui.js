@@ -79,6 +79,7 @@ const setSubmissionPermissions = (submissionData) => {
 
 const appendSubmissionsSuccess = (data) => {
   if (app.currentUserChallenge === true){
+    data.submissions = setSubmissionPermissions(data);
     data.submissions.forEach((e) => e.createdAt = e.createdAt.split('T')[0]);
     $('#challenge-submission-div').html(myChallengeSubmissionsTemplate(data));
   } else {

@@ -1,4 +1,3 @@
-HEY
 <div class="my-submissions">
 <div class="content">
   <br />
@@ -34,7 +33,7 @@ HEY
       <td id="delete-submission" data-id={{_id}} style="padding-top: 2%">
         <span style="color:black" class="glyphicon glyphicon-trash"></span>
       </td>
-      {{else if currentUserCreated}}
+      {{else}}
       <td style="padding-top: 2%; color:#000">
         <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
       </td>
@@ -46,19 +45,6 @@ HEY
       </td>
       <td id="delete-submission" data-id={{_id}} style="padding-top: 2%">
         <span style="color:black" class="glyphicon glyphicon-trash"></span>
-      </td>
-      {{else}}
-      <td style="padding-top: 2%; color:#000">
-        <span style="color:#777" class="glyphicon glyphicon-user"></span> {{ownerName}}
-      </td>
-      <td style="padding-top: 2%">
-        <span style="color:black; opacity:.2" class="glyphicon glyphicon-download-alt"></span>
-      </td>
-      <td style="padding-top: 2%">
-        <span style="color:black; opacity:.2" class="glyphicon glyphicon-share"></span>
-      </td>
-      <td data-id={{_id}} style="padding-top: 2%">
-        <span style="color:black; opacity:.2" class="glyphicon glyphicon-trash"></span>
       </td>
       {{/if}}
   </tr>
