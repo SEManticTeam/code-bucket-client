@@ -25,9 +25,9 @@ Hack Stash was created as a group project. This allowed us to internalize the wo
 
 * [User Stories](https://drive.google.com/open?id=1RUwCdpCluMVKH013oftEp0ktprOYSie9pCZaFuh7a50)
 
-* [Wireframes](https://drive.google.com/file/)
+* [Wireframes](https://drive.google.com/open?id=1MHSAaPTH1t2Ypt5Y73bw9_4qB34zUb6lVNgsZOSm6po)
 
-* [Entity Relationship Diagrams](https://drive.google.com/)
+* [Entity Relationship Diagrams](https://drive.google.com/open?id=1fvu27cXxoaNwYmSez7STZoEfYqeUakgpUyFAtYDQPQs)
 
 
 ## Ideas For Future Iterations
@@ -38,6 +38,6 @@ As the next step we would love to integrate another third party API that could a
 
 * [Link To Repo of API] (https://github.com/SEManticTeam/code-bucket-api)
 
-* [Link to Hack Stash] (https://askfsd.com)
+* [Link to Hack Stash] (https://semanticteam.github.io/code-bucket-client/)
 
 * [Link to Heroku] (https://hackstash.herokuapp.com)
