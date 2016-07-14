@@ -10,8 +10,6 @@ const challengeSubmissionsTemplate = require('../../templates/challengeSubmissio
 const showChallengeTemplate = require('../../templates/showChallenge.handlebars');
 const myChallengeSubmissionsTemplate = require('../../templates/myChallengeSubmissions.handlebars');
 
-const events = require('./events');
-
 const failure = (error) => {
   console.error(error);
 };
@@ -20,10 +18,19 @@ const success = (data) => {
   console.log(data);
 };
 
+const checkChallengeOwnerUi = (ownerId) => {
+  if(ownerId === app.user._id){
+    app.currentUserChallenge = true;
+  } else {
+    app.currentUserChallenge = false;
+  }
+  return true;
+};
+
 const challengeCreated = (data) => {
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
-  events.checkChallengeOwner();
+  checkChallengeOwnerUi();
   $('#contents').html(showChallengeTemplate(data));
   $('#set-challengeName').val(data.challenge.name);
   $('.upload-container').show();
@@ -99,4 +106,5 @@ module.exports = {
   deleteChallengeSuccess,
   setDeletePermissions,
   setSubmissionPermissions,
+  checkChallengeOwnerUi,
 };
