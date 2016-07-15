@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../../app.js');
+const helpers = require('../../helpers.js');
 
 const failure = (error) => {
   console.error(error);
@@ -37,6 +38,7 @@ const signInSuccess = (data) => {
   $('.jumbotron').show();
   $('.welcome').show();
   $('.welcome').html('<h1>Hello, ' + app.user.givenName +'</h1>');
+  helpers.runBanner();
 };
 
 const signOutSuccess = () => {
@@ -56,9 +58,7 @@ const signOutSuccess = () => {
   $('body').toggleClass('intro-body');
   $('.jumbotron').show();
   $('.welcome').hide();
-  $('.step1').hide();
-  $('.step2').hide();
-  $('.step3').hide();
+  $('.step4').hide();
 };
 
 const changePasswordSuccess = () => {

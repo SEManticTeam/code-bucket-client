@@ -53,9 +53,6 @@ const signOutSuccess = (data) => {
   $('#signed-out').show();
   $('.jumbotron').show();
   $('.welcome').hide();
-  $('.step1').hide();
-  $('.step2').hide();
-  $('.step3').hide();
 };
 
 const changePasswordSuccess = (data) => {
