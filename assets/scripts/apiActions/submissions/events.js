@@ -53,6 +53,7 @@ const onSubmitReUpload = (event) => {
   let id = data.resubmitSubmissionId;
   console.log(id);
   let formData = new FormData(event.target);
+  console.log('hi');
   api.reSubmission(formData, id)
   .done(ui.reSubmissionSuccess)
   .fail(ui.failure)
