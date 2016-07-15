@@ -21,7 +21,7 @@
             <div class="modal-body">
               <form id="sign-in" style="text-align:center;">
                 <fieldset>
-                  <input type="email" name="credentials[email]" id="signin-email" placeholder="Your Email" required><br /><br />
+                  <input type="email" name="credentials[email]" id="signin-email" placeholder="Your Email"><br /><br />
                   <input type="password" name="credentials[password]" id="signin-password" placeholder="Your Password"><br /><br />
                   <input type="submit" name="submit" class="btn btn-lg btn-default" value="Sign In">
                 </fieldset>
@@ -46,19 +46,19 @@
                 <fieldset>
 
                   <input type="text" name="credentials[givenName]"
-                  id="signup-first-name" placeholder="First Name"><br /><br />
+                  id="signup-first-name" placeholder="First Name" required><br /><br />
 
                   <input type="text" name="credentials[surname]"
-                  id="signup-last-name" placeholder="Last Name"><br /><br />
+                  id="signup-last-name" placeholder="Last Name" required><br /><br />
 
                   <input type="email" name="credentials[email]"
-                  id="signup-email" placeholder="Your Email"><br /><br />
+                  id="signup-email" placeholder="Your Email" required><br /><br />
 
                   <input type="password" name="credentials[password]"
-                  id="signup-password" placeholder="Set Password"><br /><br />
+                  id="signup-password" placeholder="Set Password" required><br /><br />
 
                   <input type="password" name="credentials[password_confirmation]"
-                  id="signup-password-confirmation" placeholder="Confirm Password"><br /><br />
+                  id="signup-password-confirmation" placeholder="Confirm Password" required><br /><br />
 
                   <input type="submit" name="submit" class="btn btn-lg btn-default" value="Create Account">
 
@@ -96,8 +96,6 @@
           My Account <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#" data-toggle="modal" data-target="#password-modal">Edit Profile</a></li>
-          <li role="separator" class="divider"></li>
           <li><a href="#" data-toggle="modal" data-target="#password-modal">Change Password</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="#" data-toggle="modal" data-target="#signout-modal">Sign Out</a></li>
@@ -128,7 +126,7 @@
                 <form id="create-challenge-form" style="text-align:center;">
                   <fieldset class="form-group">
                   <label for="challenge-name"><span style="color:#31708f" class="glyphicon glyphicon-folder-open"></span>&nbsp; Name Your Challenge</label>
-                  <input type="text" class="form-control" name="challenge[name]" id="challenge-name" placeholder="Challenge Name">
+                  <input type="text" class="form-control" name="challenge[name]" id="challenge-name" placeholder="Challenge Name" required>
                   <!-- <input type="hidden" name="challenge[ownerName]" id="challenge-owner-name"> -->
                 </fieldset>
                 <fieldset class="form-group">
@@ -141,15 +139,15 @@
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="challenge[description]">What is the Challenge?</label>
-                    <textarea class="form-control" id="challenge-description" name="challenge[description]" rows="6" placeholder="Example: Define a Function that takes two numbers and returns the sum of each of their squares. Call the Function sumOfSquares."></textarea>
+                    <textarea class="form-control" id="challenge-description" name="challenge[description]" rows="6" placeholder="Example: Define a Function that takes two numbers and returns the sum of each of their squares. Call the Function sumOfSquares." required></textarea>
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="challenge[invocation]">Invoke the Function with Arguments for Testing</label>
-                    <textarea class="form-control" id="challenge-invoke" name="challenge[invocation]" rows="1" placeholder="sumOfSquares(2,3);"></textarea>
+                    <textarea class="form-control" id="challenge-invoke" name="challenge[invocation]" rows="1" placeholder="sumOfSquares(2,3);" required></textarea>
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="challenge[answer]">What Should Be Returned from the Invoked Function Above?</label>
-                    <textarea class="form-control" id="challenge-answer" name="challenge[answer]" rows="1" placeholder="13"></textarea>
+                    <textarea class="form-control" id="challenge-answer" name="challenge[answer]" rows="1" placeholder="13" required></textarea>
                 </fieldset>
                 <fieldset class="form-group">
                     <input type="submit" name="submit" class="btn btn-md btn-default" value="Create Challenge">
