@@ -3780,11 +3780,11 @@ webpackJsonp([0],[
 
 	  return "      <td style=\"padding-top: 2%;\">\n        <span style=\"color:#777\" class=\"glyphicon glyphicon-user\"></span> You\n      </td>\n      <td style=\"padding-top: 2%\">\n        <a href="
 	    + alias4(((helper = (helper = helpers.location || (depth0 != null ? depth0.location : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"location","hash":{},"data":data}) : helper)))
-	    + " target=\"_blank\"><span style=\"color:black\" class=\"glyphicon glyphicon-download-alt\"></span></a>\n      </td>\n      <td id=\"resubmit\" style=\"padding-top: 2%\" data-id="
+	    + " target=\"_blank\"><span style=\"color:black\" class=\"glyphicon glyphicon-download-alt\"></span></a>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"resubmit\" class=\"glyphicon glyphicon-share\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-	    + ">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-share\"></span>\n      </td>\n      <td id=\"delete-submission\" data-id="
+	    + "></span>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"delete-submission\" class=\"glyphicon glyphicon-trash\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-	    + " style=\"padding-top: 2%\">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-trash\"></span>\n      </td>\n";
+	    + "></span>\n      </td>\n";
 	},"11":function(container,depth0,helpers,partials,data) {
 	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -3862,11 +3862,11 @@ webpackJsonp([0],[
 
 	  return "      <td style=\"padding-top: 2%;\">\n        <span style=\"color:#777\" class=\"glyphicon glyphicon-user\"></span> You\n      </td>\n      <td style=\"padding-top: 2%\">\n        <a href="
 	    + alias4(((helper = (helper = helpers.location || (depth0 != null ? depth0.location : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"location","hash":{},"data":data}) : helper)))
-	    + " target=\"_blank\"><span style=\"color:black\" class=\"glyphicon glyphicon-download-alt\"></span></a>\n      </td>\n      <td id=\"resubmit\" style=\"padding-top: 2%\" data-id="
+	    + " target=\"_blank\"><span style=\"color:black\" class=\"glyphicon glyphicon-download-alt\"></span></a>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"resubmit\" class=\"glyphicon glyphicon-share\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-	    + ">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-share\"></span>\n      </td>\n      <td id=\"delete-submission\" data-id="
+	    + "></span>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"delete-submission\" class=\"glyphicon glyphicon-trash\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-	    + " style=\"padding-top: 2%\">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-trash\"></span>\n      </td>\n";
+	    + "></span>\n      </td>\n";
 	},"11":function(container,depth0,helpers,partials,data) {
 	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
