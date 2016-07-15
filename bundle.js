@@ -1916,8 +1916,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  // host: 'https://hackstash.herokuapp.com',
-	  host: 'http://localhost:3000',
+	  host: 'https://hackstash.herokuapp.com',
+	  // host: 'http://localhost:3000',
 	  user: null,
 	  currentUserChallenge: null
 	};
