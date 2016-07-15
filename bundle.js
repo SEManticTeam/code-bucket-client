@@ -2018,7 +2018,7 @@ webpackJsonp([0],[
 	  $('body').toggleClass('intro-body');
 	  $('.signed-in').show();
 	  $('.jumbotron').show();
-	  $('.intro').hide();
+	  $('.intro').show();
 	  $('.welcome').show();
 	  $('.welcome').html('<h1>Hello, ' + app.user.givenName + '</h1>');
 	};
@@ -2040,7 +2040,7 @@ webpackJsonp([0],[
 	  $('body').toggleClass('intro-body');
 	  $('.jumbotron').show();
 	  $('.welcome').hide();
-	  $('.intro').show();
+	  $('.intro').hide();
 	  $('.step1').hide();
 	  $('.step2').hide();
 	  $('.step3').hide();

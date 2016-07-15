@@ -1,9 +1,9 @@
 'use strict';
 
-const app = require('../../app.js');
+const app = require('../app.js');
+const api = require('./api.js');
 
 const failure = (error) => {
-  console.error(error);
 };
 
 const signInFailure = () => {
@@ -32,7 +32,6 @@ const signInSuccess = (data) => {
   $('#signin-modal').modal('hide');
   $('#signup-modal').modal('hide');
   $('#signed-out').hide();
-  $('body').toggleClass('intro-body');
   $('.signed-in').show();
   $('.jumbotron').show();
   $('.intro').show();
@@ -40,9 +39,8 @@ const signInSuccess = (data) => {
   $('.welcome').html('<h1>Hello, ' + app.user.givenName +'</h1>');
 };
 
-const signOutSuccess = () => {
+const signOutSuccess = (data) => {
   app.user = null;
-  app.currentUserChallenge = null;
   $('#signout-modal').modal('hide');
   $('#password-modal').modal('hide');
   $('#signup-email').val('');
@@ -54,16 +52,15 @@ const signOutSuccess = () => {
   $('.signed-in').hide();
   $('#contents').empty();
   $('#signed-out').show();
-  $('body').toggleClass('intro-body');
   $('.jumbotron').show();
   $('.welcome').hide();
-  $('.intro').hide();
+  $('.intro').show();
   $('.step1').hide();
   $('.step2').hide();
   $('.step3').hide();
 };
 
-const changePasswordSuccess = () => {
+const changePasswordSuccess = (data) => {
   $('#password-modal').modal('hide');
 };
 
