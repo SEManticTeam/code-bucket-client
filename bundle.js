@@ -3763,13 +3763,12 @@ webpackJsonp([0],[
 
 	  return "  <tr>\n"
 	    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.graded : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(7, data, 0),"data":data})) != null ? stack1 : "")
-	    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.autoPass : depth0),{"name":"if","hash":{},"fn":container.program(9, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-	    + "    <td style=\"padding-top: 2%; color:red\">"
+	    + "      <td style=\"padding-top: 2%; color:#777\">"
 	    + alias4(((helper = (helper = helpers.autoPass || (depth0 != null ? depth0.autoPass : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"autoPass","hash":{},"data":data}) : helper)))
 	    + "</td>\n      <td><h4>"
 	    + alias4(((helper = (helper = helpers.createdAt || (depth0 != null ? depth0.createdAt : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"createdAt","hash":{},"data":data}) : helper)))
 	    + "</h4></td>\n\n"
-	    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.currentUserOwned : depth0),{"name":"if","hash":{},"fn":container.program(11, data, 0),"inverse":container.program(13, data, 0),"data":data})) != null ? stack1 : "")
+	    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.currentUserOwned : depth0),{"name":"if","hash":{},"fn":container.program(9, data, 0),"inverse":container.program(11, data, 0),"data":data})) != null ? stack1 : "")
 	    + "  </tr>\n";
 	},"2":function(container,depth0,helpers,partials,data) {
 	    var stack1;
@@ -3782,12 +3781,6 @@ webpackJsonp([0],[
 	},"7":function(container,depth0,helpers,partials,data) {
 	    return "      <td id=\"grade\" style=\"padding-top: 2%\">\n        <span style=\"color:#000\" class=\"glyphicon glyphicon-hourglass\"></span> Awaiting Grade\n      </td>\n";
 	},"9":function(container,depth0,helpers,partials,data) {
-	    var helper;
-
-	  return "      <td style=\"padding-top: 2%; color:green\">"
-	    + container.escapeExpression(((helper = (helper = helpers.autoPass || (depth0 != null ? depth0.autoPass : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"autoPass","hash":{},"data":data}) : helper)))
-	    + "</td>\n";
-	},"11":function(container,depth0,helpers,partials,data) {
 	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
 	  return "      <td style=\"padding-top: 2%;\">\n        <span style=\"color:#777\" class=\"glyphicon glyphicon-user\"></span> You\n      </td>\n      <td style=\"padding-top: 2%\">\n        <a href="
@@ -3797,7 +3790,7 @@ webpackJsonp([0],[
 	    + "></span>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"delete-submission\" class=\"glyphicon glyphicon-trash\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
 	    + "></span>\n      </td>\n";
-	},"13":function(container,depth0,helpers,partials,data) {
+	},"11":function(container,depth0,helpers,partials,data) {
 	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
 	  return "      <td style=\"padding-top: 2%; color:#000\">\n        <span style=\"color:#777\" class=\"glyphicon glyphicon-user\"></span> "
