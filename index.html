@@ -141,11 +141,15 @@
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="challenge[description]">What is the Challenge?</label>
-                    <textarea class="form-control" name="challenge[description]" rows="6"></textarea>
+                    <textarea class="form-control" id="challenge-description" name="challenge[description]" rows="6" placeholder="Example: Define a Function that takes two numbers and returns the sum of each of their squares. Call the Function sumOfSquares."></textarea>
                 </fieldset>
                 <fieldset class="form-group">
-                    <label for="challenge[answer]">What is the Answer?</label>
-                    <textarea class="form-control" name="challenge[answer]" rows="2"></textarea>
+                    <label for="challenge[invocation]">Invoke the Function with Arguments for Testing</label>
+                    <textarea class="form-control" id="challenge-invoke" name="challenge[invocation]" rows="1" placeholder="sumOfSquares(2,3);"></textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="challenge[answer]">What Should Be Returned from the Invoked Function Above?</label>
+                    <textarea class="form-control" id="challenge-answer" name="challenge[answer]" rows="1" placeholder="13"></textarea>
                 </fieldset>
                 <fieldset class="form-group">
                     <input type="submit" name="submit" class="btn btn-md btn-default" value="Create Challenge">
@@ -247,5 +251,8 @@
 
     </div>
     <br>
+    <div class="footer navbar-fixed-bottom" style="height: 40px; background-color: #f5f5f5;">
+    <h5 style="font-weight:300; color:#31708f; margin-top:12px; text-align:center">Created by SEMantic</h5>
+  </div>
   </body>
   </html>

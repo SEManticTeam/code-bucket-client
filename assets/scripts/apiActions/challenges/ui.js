@@ -30,6 +30,10 @@ const success = (data) => {
 const challengeCreated = (data) => {
   $('.jumbotron').hide();
   $('#create-challenge-modal').modal('hide');
+  $('#challenge-name').val('');
+  $('#challenge-description').val('');
+  $('#challenge-invoke').val('');
+  $('#challenge-answer').val('');
   checkChallengeOwner(data.challenge._owner);
   $('#contents').html(showChallengeTemplate(data));
   $('#set-challengeName').val(data.challenge.name);
