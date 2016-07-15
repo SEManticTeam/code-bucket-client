@@ -65,10 +65,10 @@ const goToChallenge = (event) => {
 
 const onDeleteChallenge = (event) => {
   event.preventDefault();
-  let id = $(event.target).parent().data("id");
+  let id = $(event.target).data("id");
   api.deleteChallenge(id)
   .done(ui.deleteChallengeSuccess)
-  .then(() => $(event.target).parent().parent().empty())
+  .then(() => $(event.target).parent().parent().parent().empty())
   .fail(ui.failure);
 };
 

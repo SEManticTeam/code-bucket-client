@@ -2157,9 +2157,9 @@ webpackJsonp([0],[
 
 	var onDeleteChallenge = function onDeleteChallenge(event) {
 	  event.preventDefault();
-	  var id = $(event.target).parent().data("id");
+	  var id = $(event.target).data("id");
 	  api.deleteChallenge(id).done(ui.deleteChallengeSuccess).then(function () {
-	    return $(event.target).parent().parent().empty();
+	    return $(event.target).parent().parent().parent().empty();
 	  }).fail(ui.failure);
 	};
 
