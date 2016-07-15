@@ -33,7 +33,7 @@ const onSubmitUploadForm = (event) => {
 
 const onDeleteSubmission = (event) => {
   event.preventDefault();
-  let id = $(event.target).parent().data("id");
+  let id = $(event.target).data("id");
   api.deleteSubmission(id)
   .done(ui.deleteSubmissionSuccess)
   .then(() => $(event.target).parent().parent().empty())
@@ -42,7 +42,7 @@ const onDeleteSubmission = (event) => {
 
 const onResubmit = (event) => {
   event.preventDefault();
-  let id = $(event.target).parent().data("id");
+  let id = $(event.target).data("id");
   $('#resubmitSubmissionId').val(id);
   $('#resubmitModal').modal('show');
 };
