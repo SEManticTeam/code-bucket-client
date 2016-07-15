@@ -68,7 +68,7 @@ const onDeleteChallenge = (event) => {
   let id = $(event.target).data("id");
   api.deleteChallenge(id)
   .done(ui.deleteChallengeSuccess)
-  .then(() => $(event.target).parent().parent().parent().empty())
+  .then(() => $(event.target).parent().parent().empty())
   .fail(ui.failure);
 };
 

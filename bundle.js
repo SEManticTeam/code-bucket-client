@@ -2159,7 +2159,7 @@ webpackJsonp([0],[
 	  event.preventDefault();
 	  var id = $(event.target).data("id");
 	  api.deleteChallenge(id).done(ui.deleteChallengeSuccess).then(function () {
-	    return $(event.target).parent().parent().parent().empty();
+	    return $(event.target).parent().parent().empty();
 	  }).fail(ui.failure);
 	};
 
