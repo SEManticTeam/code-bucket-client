@@ -54,6 +54,7 @@ const signOutSuccess = () => {
   $('.signed-in').hide();
   $('#contents').empty();
   $('#signed-out').show();
+  $('body').toggleClass('intro-body');
   $('.jumbotron').show();
   $('.welcome').hide();
   $('.intro').show();
