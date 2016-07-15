@@ -23,6 +23,11 @@ const failure = (error) => {
   console.error(error);
 };
 
+const challengeFailure = () => {
+  $('#challenge-notes').empty();
+  $('#challenge-notes').append('All Fields are Required. Try Again.');
+};
+
 const success = (data) => {
   console.log(data);
 };
@@ -34,6 +39,7 @@ const challengeCreated = (data) => {
   $('#challenge-description').val('');
   $('#challenge-invoke').val('');
   $('#challenge-answer').val('');
+  $('#challenge-notes').empty();
   checkChallengeOwner(data.challenge._owner);
   $('#contents').html(showChallengeTemplate(data));
   $('#set-challengeName').val(data.challenge.name);
@@ -135,4 +141,5 @@ module.exports = {
   refreshChallenge,
   gradeSubmissionSuccess,
   checkChallengeOwner,
+  challengeFailure,
 };

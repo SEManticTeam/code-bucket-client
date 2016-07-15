@@ -11,7 +11,7 @@ const onCreateChallenge = (event) => {
   let data = getFormFields(event.target);
   api.create(data)
   .done(ui.challengeCreated)
-  .fail(ui.failure);
+  .fail(ui.challengeFailure);
 };
 
 const onViewUserChallenges = (event) => {
