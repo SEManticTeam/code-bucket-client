@@ -2553,9 +2553,9 @@ webpackJsonp([0],[
 	},"2":function(container,depth0,helpers,partials,data) {
 	    var helper;
 
-	  return "      <td id=\"select-challenge\">\n        <h5><span style=\"color:#777\" class=\"glyphicon glyphicon-user\"></span> You</h5>\n      </td>\n      <td class=\"delete-challenge\" style=\"padding-top: 2%\" data-id="
+	  return "      <td id=\"select-challenge\">\n        <h5><span style=\"color:#777\" class=\"glyphicon glyphicon-user\"></span> You</h5>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\"  data-id="
 	    + container.escapeExpression(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"_id","hash":{},"data":data}) : helper)))
-	    + ">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-trash\"></span>\n      </td>\n";
+	    + " class=\"glyphicon glyphicon-trash delete-challenge\"></span>\n      </td>\n";
 	},"4":function(container,depth0,helpers,partials,data) {
 	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
