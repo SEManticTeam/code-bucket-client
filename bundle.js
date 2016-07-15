@@ -2115,7 +2115,7 @@ webpackJsonp([0],[
 	var onCreateChallenge = function onCreateChallenge(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  api.create(data).done(ui.challengeCreated).fail(ui.failure);
+	  api.create(data).done(ui.challengeCreated).fail(ui.challengeFailure);
 	};
 
 	var onViewUserChallenges = function onViewUserChallenges(event) {
@@ -2374,6 +2374,11 @@ webpackJsonp([0],[
 	  console.error(error);
 	};
 
+	var challengeFailure = function challengeFailure() {
+	  $('#challenge-notes').empty();
+	  $('#challenge-notes').append('All Fields are Required. Try Again.');
+	};
+
 	var success = function success(data) {
 	  console.log(data);
 	};
@@ -2385,6 +2390,7 @@ webpackJsonp([0],[
 	  $('#challenge-description').val('');
 	  $('#challenge-invoke').val('');
 	  $('#challenge-answer').val('');
+	  $('#challenge-notes').empty();
 	  checkChallengeOwner(data.challenge._owner);
 	  $('#contents').html(showChallengeTemplate(data));
 	  $('#set-challengeName').val(data.challenge.name);
@@ -2483,7 +2489,8 @@ webpackJsonp([0],[
 	  setSubmissionPermissions: setSubmissionPermissions,
 	  refreshChallenge: refreshChallenge,
 	  gradeSubmissionSuccess: gradeSubmissionSuccess,
-	  checkChallengeOwner: checkChallengeOwner
+	  checkChallengeOwner: checkChallengeOwner,
+	  challengeFailure: challengeFailure
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
