@@ -3917,7 +3917,7 @@ webpackJsonp([0],[
 
 	var onDeleteSubmission = function onDeleteSubmission(event) {
 	  event.preventDefault();
-	  var id = $(event.target).parent().data("id");
+	  var id = $(event.target).data("id");
 	  api.deleteSubmission(id).done(ui.deleteSubmissionSuccess).then(function () {
 	    return $(event.target).parent().parent().empty();
 	  }).fail(ui.failure);
@@ -3925,7 +3925,7 @@ webpackJsonp([0],[
 
 	var onResubmit = function onResubmit(event) {
 	  event.preventDefault();
-	  var id = $(event.target).parent().data("id");
+	  var id = $(event.target).data("id");
 	  $('#resubmitSubmissionId').val(id);
 	  $('#resubmitModal').modal('show');
 	};
@@ -4148,11 +4148,11 @@ webpackJsonp([0],[
 	    + alias4(((helper = (helper = helpers.createdAt || (depth0 != null ? depth0.createdAt : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"createdAt","hash":{},"data":data}) : helper)))
 	    + "</h4></td>\n      <td style=\"padding-top: 2%\">\n        <a href="
 	    + alias4(((helper = (helper = helpers.location || (depth0 != null ? depth0.location : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"location","hash":{},"data":data}) : helper)))
-	    + " target=\"_blank\"><span style=\"color:black\" class=\"glyphicon glyphicon-download-alt\"></span></a>\n      </td>\n      <td id=\"resubmit\" style=\"padding-top: 2%\" data-id="
+	    + " target=\"_blank\"><span style=\"color:black\" class=\"glyphicon glyphicon-download-alt\"></span></a>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"resubmit\" class=\"glyphicon glyphicon-share\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-	    + ">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-share\"></span>\n      </td>\n      <td id=\"delete-submission\" data-id="
+	    + "></span>\n      </td>\n      <td style=\"padding-top: 2%\">\n        <span style=\"color:black\" id=\"delete-submission\" class=\"glyphicon glyphicon-trash\" data-id="
 	    + alias4(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"_id","hash":{},"data":data}) : helper)))
-	    + " style=\"padding-top: 2%\">\n        <span style=\"color:black\" class=\"glyphicon glyphicon-trash\"></span>\n      </td>\n  </tr>\n";
+	    + "></span>\n      </td>\n  </tr>\n";
 	},"2":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 
