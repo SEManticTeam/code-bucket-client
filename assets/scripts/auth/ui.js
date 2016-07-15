@@ -34,7 +34,6 @@ const signInSuccess = (data) => {
   $('#signed-out').hide();
   $('.signed-in').show();
   $('.jumbotron').show();
-  $('.intro').show();
   $('.welcome').show();
   $('.welcome').html('<h1>Hello, ' + app.user.givenName +'</h1>');
 };
@@ -54,7 +53,6 @@ const signOutSuccess = (data) => {
   $('#signed-out').show();
   $('.jumbotron').show();
   $('.welcome').hide();
-  $('.intro').show();
   $('.step1').hide();
   $('.step2').hide();
   $('.step3').hide();
