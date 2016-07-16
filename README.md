@@ -6,13 +6,13 @@ You can resubmit your files and wait for the challenge creator to grade your sol
 
 ## Technologies Used
 
-* Javascript
+* JavaScript
 * jQuery
 * Bootstrap
 * Handlebars
 * HTML & CSS
-* Ajax & JSON
-* Mongoose
+* Ajax
+* MongoDB
 
 ## Biggest Learning Moments
 
