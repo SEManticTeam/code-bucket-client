@@ -2285,35 +2285,35 @@ webpackJsonp([0],[
 	  });
 	};
 
-	var incrementSubmissionCount = function incrementSubmissionCount(data) {
-	  return $.ajax({
-	    url: app.host + '/challenges/' + data.challenge._id,
-	    method: "PATCH",
-	    headers: {
-	      Authorization: 'Token token=' + app.user.token
-	    },
-	    data: {
-	      challenge: {
-	        submissionCount: data.challenge.submissionCount + 1
-	      }
-	    }
-	  });
-	};
+	// const incrementSubmissionCount = (data) => {
+	//   return $.ajax({
+	//     url: app.host + '/challenges/' + data.challenge._id,
+	//     method: "PATCH",
+	//     headers: {
+	//       Authorization: 'Token token=' + app.user.token,
+	//     },
+	//     data: {
+	//       challenge: {
+	//         submissionCount: data.challenge.submissionCount + 1,
+	//       }
+	//     }
+	//   });
+	// };
 
-	var decrementSubmissionCount = function decrementSubmissionCount(data) {
-	  return $.ajax({
-	    url: app.host + '/challenges/' + data.challenge._id,
-	    method: "PATCH",
-	    headers: {
-	      Authorization: 'Token token=' + app.user.token
-	    },
-	    data: {
-	      challenge: {
-	        submissionCount: data.challenge.submissionCount - 1
-	      }
-	    }
-	  });
-	};
+	// const decrementSubmissionCount = (data) => {
+	//   return $.ajax({
+	//     url: app.host + '/challenges/' + data.challenge._id,
+	//     method: "PATCH",
+	//     headers: {
+	//       Authorization: 'Token token=' + app.user.token,
+	//     },
+	//     data: {
+	//       challenge: {
+	//         submissionCount: data.challenge.submissionCount - 1,
+	//       }
+	//     }
+	//   });
+	// };
 
 	var gradeSubmission = function gradeSubmission(passfail, id) {
 	  return $.ajax({
@@ -2338,8 +2338,8 @@ webpackJsonp([0],[
 	  deleteChallenge: deleteChallenge,
 	  showChallenge: showChallenge,
 	  showChallengeSubmissions: showChallengeSubmissions,
-	  incrementSubmissionCount: incrementSubmissionCount,
-	  decrementSubmissionCount: decrementSubmissionCount,
+	  // incrementSubmissionCount,
+	  // decrementSubmissionCount,
 	  gradeSubmission: gradeSubmission
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -4087,19 +4087,21 @@ webpackJsonp([0],[
 	  $('.upload-container').hide();
 	  $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1200).fadeOut();
 	  $('.upload-container').delay(1200).fadeIn();
-	  challengeApi.showChallenge(id).done(function (data) {
-	    return challengeApi.incrementSubmissionCount(data).then(function () {
-	      challengeApi.showChallengeSubmissions(id).done(challengeUi.appendSubmissionsSuccess).fail(challengeUi.failure);
-	    }).fail(challengeUi.failure);
-	  }).fail(challengeUi.failure);
+	  challengeApi.showChallenge(id)
+	  // .done((data) => challengeApi.incrementSubmissionCount(data)
+	  .then(function () {
+	    challengeApi.showChallengeSubmissions(id).done(challengeUi.appendSubmissionsSuccess).fail(challengeUi.failure);
+	  })
+	  // .fail(challengeUi.failure)
+	  // )
+	  .fail(challengeUi.failure);
 	};
 
 	var deleteSubmissionSuccess = function deleteSubmissionSuccess(data) {
 	  var id = data.responseSubmission._challenge;
-	  console.log(data.responseSubmission._challenge);
-	  challengeApi.showChallenge(id).then(function (data) {
-	    return challengeApi.decrementSubmissionCount(data);
-	  }).fail(challengeUi.failure);
+	  challengeApi.showChallenge(id)
+	  // .then((data) => challengeApi.decrementSubmissionCount(data))
+	  .fail(challengeUi.failure);
 	};
 
 	var reloadSubmissions = function reloadSubmissions(data) {

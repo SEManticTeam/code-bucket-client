@@ -63,35 +63,35 @@ const showChallengeSubmissions = (challengeId) => {
   });
 };
 
-const incrementSubmissionCount = (data) => {
-  return $.ajax({
-    url: app.host + '/challenges/' + data.challenge._id,
-    method: "PATCH",
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: {
-      challenge: {
-        submissionCount: data.challenge.submissionCount + 1,
-      }
-    }
-  });
-};
+// const incrementSubmissionCount = (data) => {
+//   return $.ajax({
+//     url: app.host + '/challenges/' + data.challenge._id,
+//     method: "PATCH",
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: {
+//       challenge: {
+//         submissionCount: data.challenge.submissionCount + 1,
+//       }
+//     }
+//   });
+// };
 
-const decrementSubmissionCount = (data) => {
-  return $.ajax({
-    url: app.host + '/challenges/' + data.challenge._id,
-    method: "PATCH",
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: {
-      challenge: {
-        submissionCount: data.challenge.submissionCount - 1,
-      }
-    }
-  });
-};
+// const decrementSubmissionCount = (data) => {
+//   return $.ajax({
+//     url: app.host + '/challenges/' + data.challenge._id,
+//     method: "PATCH",
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: {
+//       challenge: {
+//         submissionCount: data.challenge.submissionCount - 1,
+//       }
+//     }
+//   });
+// };
 
 const gradeSubmission= (passfail, id) => {
   return $.ajax({
@@ -116,7 +116,7 @@ module.exports = {
   deleteChallenge,
   showChallenge,
   showChallengeSubmissions,
-  incrementSubmissionCount,
-  decrementSubmissionCount,
+  // incrementSubmissionCount,
+  // decrementSubmissionCount,
   gradeSubmission,
 };

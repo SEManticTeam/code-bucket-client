@@ -27,22 +27,21 @@ const submissionSuccess = (data) => {
   $('#submit-success').html('<h4 style="color:green"><span style="color:green" class="glyphicon glyphicon-folder-open"></span>&nbsp; File successfully submitted!</h5>').delay(1200).fadeOut();
   $('.upload-container').delay(1200).fadeIn();
   challengeApi.showChallenge(id)
-  .done((data) => challengeApi.incrementSubmissionCount(data)
+  // .done((data) => challengeApi.incrementSubmissionCount(data)
     .then(() => {
         challengeApi.showChallengeSubmissions(id)
         .done(challengeUi.appendSubmissionsSuccess)
         .fail(challengeUi.failure);
       })
-    .fail(challengeUi.failure)
-  )
+    // .fail(challengeUi.failure)
+  // )
   .fail(challengeUi.failure);
 };
 
 const deleteSubmissionSuccess = (data) => {
   let id = data.responseSubmission._challenge;
-  console.log(data.responseSubmission._challenge);
   challengeApi.showChallenge(id)
-  .then((data) => challengeApi.decrementSubmissionCount(data))
+  // .then((data) => challengeApi.decrementSubmissionCount(data))
   .fail(challengeUi.failure);
 };
 
