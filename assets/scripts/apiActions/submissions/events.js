@@ -14,7 +14,6 @@ const onViewUserSubmissions = (event) => {
 
 const onViewSubmissions = (event) => {
   event.preventDefault();
-  console.log('viewing submissions');
   $('.jumbotron').hide();
   $('#contents').empty();
   api.viewAllSubmissions()
@@ -51,15 +50,12 @@ const onSubmitReUpload = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   let id = data.resubmitSubmissionId;
-  console.log(id);
   let formData = new FormData(event.target);
-  console.log('hi');
   api.reSubmission(formData, id)
   .done(ui.reSubmissionSuccess)
   .fail(ui.failure)
   ;
 };
-
 
 const addHandlers = () => {
   $('#view-submissions').on('click', onViewSubmissions);
